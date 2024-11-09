@@ -1,0 +1,108 @@
+[33mWARNING[0m:  [09-11-2024 16:12:25] chroma_server_nofile is not supported on Windows. chroma_server_nofile will not be set.
+[32mINFO[0m:     [09-11-2024 16:12:26] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [09-11-2024 16:12:27] Starting component System
+[36mDEBUG[0m:    [09-11-2024 16:12:27] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [09-11-2024 16:12:27] Starting component SqliteDB
+[36mDEBUG[0m:    [09-11-2024 16:12:28] Starting component QuotaEnforcer
+[36mDEBUG[0m:    [09-11-2024 16:12:28] Starting component Posthog
+[36mDEBUG[0m:    [09-11-2024 16:12:28] Starting component SimpleRateLimitEnforcer
+[36mDEBUG[0m:    [09-11-2024 16:12:28] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [09-11-2024 16:12:28] Starting component LocalExecutor
+[36mDEBUG[0m:    [09-11-2024 16:12:28] Starting component SegmentAPI
+[32mINFO[0m:     [09-11-2024 16:12:29] Started server process [[36m22492[0m]
+[32mINFO[0m:     [09-11-2024 16:12:29] Waiting for application startup.
+[32mINFO[0m:     [09-11-2024 16:12:29] Application startup complete.
+[32mINFO[0m:     [09-11-2024 16:12:29] Uvicorn running on [1mhttp://localhost:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     [09-11-2024 16:12:48] ::1:55740 - "GET / HTTP/1.1" 404
+[32mINFO[0m:     [09-11-2024 16:12:48] ::1:55740 - "GET /favicon.ico HTTP/1.1" 404
+[32mINFO[0m:     [09-11-2024 16:15:06] ::1:55834 - "GET /api/test HTTP/1.1" 404
+[32mINFO[0m:     [09-11-2024 16:15:13] ::1:55834 - "GET /api/test HTTP/1.1" 404
+[32mINFO[0m:     [09-11-2024 16:15:20] ::1:55834 - "GET /api/test HTTP/1.1" 404
+[32mINFO[0m:     [09-11-2024 16:15:57] ::1:55874 - "GET / HTTP/1.1" 404
+[32mINFO[0m:     [09-11-2024 16:15:59] ::1:55874 - "GET / HTTP/1.1" 404
+[32mINFO[0m:     [09-11-2024 16:16:03] ::1:55883 - "GET /api/test HTTP/1.1" 404
+[32mINFO[0m:     [09-11-2024 16:16:03] ::1:55884 - "GET /api/test HTTP/1.1" 404
+[32mINFO[0m:     [09-11-2024 16:18:50] ::1:56006 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [09-11-2024 16:18:50] ::1:56006 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [09-11-2024 16:18:50] ::1:56006 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [09-11-2024 16:20:11] ::1:56055 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [09-11-2024 16:20:11] ::1:56055 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[36mDEBUG[0m:    [09-11-2024 16:20:11] Collection my_collection already exists, returning existing collection.
+[32mINFO[0m:     [09-11-2024 16:20:11] ::1:56055 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [09-11-2024 16:20:24] ::1:56070 - "GET / HTTP/1.1" 404
+[32mINFO[0m:     [09-11-2024 16:20:25] ::1:56070 - "GET / HTTP/1.1" 404
+[32mINFO[0m:     [09-11-2024 16:20:41] ::1:56104 - "GET /api/test HTTP/1.1" 404
+[36mDEBUG[0m:    [09-11-2024 16:23:49] Starting component PersistentLocalHnswSegment
+[32mINFO[0m:     [09-11-2024 16:23:49] ::1:56244 - "POST /api/v1/collections/eb71e86d-5e6c-41ac-9687-dbffd813bdda/upsert HTTP/1.1" 200
+[32mINFO[0m:     [09-11-2024 16:23:51] ::1:56244 - "POST /api/v1/collections/eb71e86d-5e6c-41ac-9687-dbffd813bdda/query HTTP/1.1" 200
+[32mINFO[0m:     [09-11-2024 16:26:45] ::1:56357 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [09-11-2024 16:26:45] ::1:56357 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[36mDEBUG[0m:    [09-11-2024 16:26:45] Collection my_collection already exists, returning existing collection.
+[32mINFO[0m:     [09-11-2024 16:26:45] ::1:56357 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [09-11-2024 16:26:47] ::1:56357 - "POST /api/v1/collections/eb71e86d-5e6c-41ac-9687-dbffd813bdda/upsert HTTP/1.1" 200
+[32mINFO[0m:     [09-11-2024 16:26:48] ::1:56357 - "POST /api/v1/collections/eb71e86d-5e6c-41ac-9687-dbffd813bdda/query HTTP/1.1" 200
+[32mINFO[0m:     [09-11-2024 16:26:57] ::1:56367 - "GET / HTTP/1.1" 404
+[32mINFO[0m:     [09-11-2024 16:26:59] ::1:56367 - "GET / HTTP/1.1" 404
+[32mINFO[0m:     [09-11-2024 16:27:01] ::1:56367 - "GET / HTTP/1.1" 404
+[32mINFO[0m:     [09-11-2024 16:33:31] Shutting down
+[32mINFO[0m:     [09-11-2024 16:33:31] Waiting for application shutdown.
+[36mDEBUG[0m:    [09-11-2024 16:33:31] Stopping component System
+[36mDEBUG[0m:    [09-11-2024 16:33:31] Stopping component SegmentAPI
+[36mDEBUG[0m:    [09-11-2024 16:33:31] Stopping component LocalExecutor
+[36mDEBUG[0m:    [09-11-2024 16:33:31] Stopping component PersistentLocalHnswSegment
+[36mDEBUG[0m:    [09-11-2024 16:33:31] Stopping component LocalSegmentManager
+[36mDEBUG[0m:    [09-11-2024 16:33:31] Stopping component SimpleRateLimitEnforcer
+[36mDEBUG[0m:    [09-11-2024 16:33:31] Stopping component Posthog
+[36mDEBUG[0m:    [09-11-2024 16:33:31] Stopping component QuotaEnforcer
+[36mDEBUG[0m:    [09-11-2024 16:33:31] Stopping component SqliteDB
+[36mDEBUG[0m:    [09-11-2024 16:33:31] Stopping component OpenTelemetryClient
+[32mINFO[0m:     [09-11-2024 16:33:31] Application shutdown complete.
+[32mINFO[0m:     [09-11-2024 16:33:31] Finished server process [[36m22492[0m]
+[33mWARNING[0m:  [09-11-2024 16:33:44] chroma_server_nofile is not supported on Windows. chroma_server_nofile will not be set.
+[32mINFO[0m:     [09-11-2024 16:33:45] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [09-11-2024 16:33:45] Starting component System
+[36mDEBUG[0m:    [09-11-2024 16:33:45] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [09-11-2024 16:33:45] Starting component SqliteDB
+[36mDEBUG[0m:    [09-11-2024 16:33:45] Starting component QuotaEnforcer
+[36mDEBUG[0m:    [09-11-2024 16:33:45] Starting component Posthog
+[36mDEBUG[0m:    [09-11-2024 16:33:45] Starting component SimpleRateLimitEnforcer
+[36mDEBUG[0m:    [09-11-2024 16:33:45] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [09-11-2024 16:33:45] Starting component LocalExecutor
+[36mDEBUG[0m:    [09-11-2024 16:33:45] Starting component SegmentAPI
+[32mINFO[0m:     [09-11-2024 16:33:45] Started server process [[36m19680[0m]
+[32mINFO[0m:     [09-11-2024 16:33:45] Waiting for application startup.
+[32mINFO[0m:     [09-11-2024 16:33:45] Application startup complete.
+[32mINFO[0m:     [09-11-2024 16:33:45] Uvicorn running on [1mhttp://localhost:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     [09-11-2024 16:33:56] ::1:56719 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [09-11-2024 16:33:56] ::1:56719 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[36mDEBUG[0m:    [09-11-2024 16:33:56] Collection my_collection already exists, returning existing collection.
+[32mINFO[0m:     [09-11-2024 16:33:56] ::1:56719 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[36mDEBUG[0m:    [09-11-2024 16:33:58] Starting component PersistentLocalHnswSegment
+[32mINFO[0m:     [09-11-2024 16:33:58] ::1:56719 - "POST /api/v1/collections/eb71e86d-5e6c-41ac-9687-dbffd813bdda/upsert HTTP/1.1" 200
+[32mINFO[0m:     [09-11-2024 16:33:58] ::1:56719 - "POST /api/v1/collections/eb71e86d-5e6c-41ac-9687-dbffd813bdda/query HTTP/1.1" 200
+[32mINFO[0m:     [09-11-2024 16:34:08] ::1:56728 - "GET / HTTP/1.1" 404
+[32mINFO[0m:     [09-11-2024 16:34:39] ::1:56727 - "GET /api/test HTTP/1.1" 404
+[32mINFO[0m:     [09-11-2024 16:36:03] ::1:56817 - "GET / HTTP/1.1" 404
+[32mINFO[0m:     [09-11-2024 16:37:41] ::1:56895 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [09-11-2024 16:37:41] ::1:56895 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[36mDEBUG[0m:    [09-11-2024 16:37:41] Collection my_collection already exists, returning existing collection.
+[32mINFO[0m:     [09-11-2024 16:37:41] ::1:56895 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [09-11-2024 16:37:43] ::1:56895 - "POST /api/v1/collections/eb71e86d-5e6c-41ac-9687-dbffd813bdda/upsert HTTP/1.1" 200
+[32mINFO[0m:     [09-11-2024 16:37:44] ::1:56895 - "POST /api/v1/collections/eb71e86d-5e6c-41ac-9687-dbffd813bdda/query HTTP/1.1" 200
+[32mINFO[0m:     [09-11-2024 16:37:53] ::1:60381 - "GET / HTTP/1.1" 404
+[32mINFO[0m:     [09-11-2024 16:38:06] ::1:60390 - "GET / HTTP/1.1" 404
+[32mINFO[0m:     [09-11-2024 16:38:18] ::1:60403 - "GET /api/test HTTP/1.1" 404
+[32mINFO[0m:     [09-11-2024 16:39:21] ::1:60451 - "GET / HTTP/1.1" 404
+[32mINFO[0m:     [09-11-2024 16:40:52] ::1:60518 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [09-11-2024 16:40:52] ::1:60518 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[36mDEBUG[0m:    [09-11-2024 16:40:52] Collection my_collection already exists, returning existing collection.
+[32mINFO[0m:     [09-11-2024 16:40:52] ::1:60518 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [09-11-2024 16:40:54] ::1:60518 - "POST /api/v1/collections/eb71e86d-5e6c-41ac-9687-dbffd813bdda/upsert HTTP/1.1" 200
+[32mINFO[0m:     [09-11-2024 16:40:55] ::1:60518 - "POST /api/v1/collections/eb71e86d-5e6c-41ac-9687-dbffd813bdda/query HTTP/1.1" 200
+[32mINFO[0m:     [09-11-2024 16:41:04] ::1:60525 - "GET / HTTP/1.1" 404
+[32mINFO[0m:     [09-11-2024 16:41:07] ::1:60525 - "GET / HTTP/1.1" 404
+[32mINFO[0m:     [09-11-2024 16:43:33] ::1:60631 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [09-11-2024 16:43:33] ::1:60631 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[36mDEBUG[0m:    [09-11-2024 16:43:33] Collection my_collection already exists, returning existing collection.
+[32mINFO[0m:     [09-11-2024 16:43:33] ::1:60631 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [09-11-2024 16:43:35] ::1:60631 - "POST /api/v1/collections/eb71e86d-5e6c-41ac-9687-dbffd813bdda/upsert HTTP/1.1" 200
