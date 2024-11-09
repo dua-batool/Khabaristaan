@@ -6,6 +6,7 @@
 # Backend
 /backend/node_modules/
 /backend/.env
+./backend/chroma.log
 
 # Other
 .DS_Store

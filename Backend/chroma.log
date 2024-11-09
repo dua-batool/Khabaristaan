@@ -106,3 +106,4 @@
 [36mDEBUG[0m:    [09-11-2024 16:43:33] Collection my_collection already exists, returning existing collection.
 [32mINFO[0m:     [09-11-2024 16:43:33] ::1:60631 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
 [32mINFO[0m:     [09-11-2024 16:43:35] ::1:60631 - "POST /api/v1/collections/eb71e86d-5e6c-41ac-9687-dbffd813bdda/upsert HTTP/1.1" 200
+[32mINFO[0m:     [09-11-2024 16:43:36] ::1:60631 - "POST /api/v1/collections/eb71e86d-5e6c-41ac-9687-dbffd813bdda/query HTTP/1.1" 200
