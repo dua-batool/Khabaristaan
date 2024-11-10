@@ -1,35 +1,18 @@
 // src/App.jsx
-import React, { useEffect, useState } from 'react';
-import { fetchDataFromAPI } from './services/chromaApi';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, } from 'react-router-dom';
+import HomePage from './pages/Home/Home';
+import Chroma from './pages/Chroma/Chroma';
 
 function App() {
-  const [message, setMessage] = useState('');
-  const [testMessage, setTestMessage] = useState('');
-
-  useEffect(() => {
-    // Fetch data from the root endpoint
-    fetchDataFromAPI('/')
-      .then(response => setMessage(response))
-      .catch(error => console.error("Error fetching root message:", error));
-
-    // Fetch data from the /api/test endpoint
-    fetchDataFromAPI('/api/test')
-      .then(response => setTestMessage(response))
-      .catch(error => console.error("Error fetching test message:", error));
-  }, []);
-
   return (
-    <div>
-      <h1>Chroma API Frontend</h1>
       <div>
-        <h2>Root Message:</h2>
-        <p>{message || "Loading..."}</p>
+        {/* Define routes here */}
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path='/chroma' element={<Chroma />} />
+        </Routes>
       </div>
-      <div>
-        <h2>Test API Message:</h2>
-        <p>{testMessage || "Loading..."}</p>
-      </div>
-    </div>
   );
 }
 
