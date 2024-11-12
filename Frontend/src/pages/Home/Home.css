@@ -9,42 +9,66 @@ html, body {
   .homepage {
     width: 100vw;
     min-height: 100vh;
-    background-color: var(--light-beige);
+    background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
   
   .header {
+    background: linear-gradient(to bottom, var(--light-beige) 50%, white 50%);
+  }
+
+  .header-content{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
-    padding: 10px 0;
+    padding-left: 60px;
+    padding-right: 60px;
   }
   
   .login-button {
     background-color: var(--dark-brown) !important;
     color: var(--light-beige) !important;
-    border-radius: 20px;
-    padding: 5px 15px;
+    border-radius: 50px !important;
+    padding-left: 28px !important;
+    padding-right: 28px !important;
+    height: 32px;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
   }
   
   .search-icon {
-    font-size: 20px;
-    margin-right: 20px;
+    color: var(--dark-brown);
+  }
+
+  .left-items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding-top: 30px;
   }
   
   .nav-links {
     display: flex;
-    gap: 20px;
+    gap: 40px;
     font-size: 16px;
-    color: #333;
+    color: var(--dark-brown);
+    padding-top: 30px;
   }
-  
-  .title-section {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
+
+  .banner {
+    background-color: var(--dark-brown); /* Brown color */
+    color: white;
+    padding: 60px 30px;
+    position: relative;
+    text-align: center;
+    font-weight: bold;
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%); /* Triangular bottom */
   }
   
   .brand-name {
@@ -53,12 +77,18 @@ html, body {
   }
   
   .date {
-    font-size: 18px;
-    color: #666;
+    display: flex;
+    justify-content: flex-end;
+    color: var(--dark-brown);
+    padding-left: 60px;
+    padding-right: 60px;
   }
   
   .main-content {
     margin-top: 20px;
+    width: 100%;
+    justify-content: flex-end;
+    padding-right: 60px;
   }
   
   .sidebar {
@@ -90,11 +120,14 @@ html, body {
     background-color: #fff;
     padding: 20px;
     margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    gap: 20px
   }
   
   .description {
-    font-size: 14px;
-    color: #666;
     margin-top: 10px;
   }
   

@@ -1,33 +1,66 @@
 import React from 'react';
-import { Box, Button, Typography, Paper } from '@mui/material';
+import { Box, Button, Typography, Paper, Avatar } from '@mui/material';
+import SearchIcon from '@mui/icons-material/Search';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import './Home.css';
 
 const HomePage = () => {
+  const [dateValue, setDateValue] = React.useState(null);
+
   return (
     <Box className="homepage" style={{ width: '100vw', minHeight: '100vh' }}>
       {/* Header Section */}
-      <Box className="header">
-        <Button className="login-button">Login</Button>
-        <Box className="search-icon">🔍</Box>
-        <Box className="nav-links">
-          <Typography>پاکستان</Typography>
-          <Typography>انٹرنیشنل</Typography>
-          <Typography>ادبیات</Typography>
-          <Typography>رجحانات</Typography>
-          <Typography>کلاسیکی ادب</Typography>
-          <Typography>ایڈیٹوریل</Typography>
+      <Box className="header" style={{ width: '100vw', height: '180px' }}>
+        <Box className="header-content">
+            <Box className="left-items">
+            <Button className="login-button">Login</Button>
+            <Box className="search-icon">
+                <SearchIcon />
+            </Box>
+            </Box>
+            <Box className="nav-links">
+              <Typography variant='h2'>پاکستان</Typography>
+              <Typography variant='h2'>انٹرنیشنل</Typography>
+              <Typography variant='h2'>ادبیات</Typography>
+              <Typography variant='h2'>رجحانات</Typography>
+              <Typography variant='h2'>کلاسیکی ادب</Typography>
+              <Typography variant='h2'>ایڈیٹوریل</Typography>
+            </Box>
+            <Box className="banner">
+              <Typography variant="h1" className="brand-name">ذخیرہ خبر</Typography>
+            </Box>
         </Box>
       </Box>
 
       {/* Title Section */}
-      <Box className="title-section">
-        <Typography className="brand-name">ذخیرہ خبر</Typography>
-        <Typography className="date">۲۰۲۴ کی خبریں</Typography>
+      <Box className="title-section" style={{ width: '100vw' }}>
+        <Typography variant="h1" className="date">ک۲۰۲۴ کی خبریں</Typography>
       </Box>
 
+      <LocalizationProvider dateAdapter={AdapterDateFns}>
+        <DatePicker
+          // label="تاریخ منتخب کریں"
+          label="Set Date"
+          value={dateValue} // state to handle the selected date
+          onChange={(newDate) => setDateValue(newDate)} // function to set the selected date
+          renderInput={(params) => (
+            <TextField
+              {...params}
+              fullWidth
+              margin="0px"
+              variant="outlined"
+              placeholder="dd/mm/yyyy"
+            />
+          )}
+        />
+      </LocalizationProvider>
+
       {/* Main Content Section */}
-      <Box display="flex" className="main-content" gap={2}>
-        <Box flex="1" maxWidth="25%">
+      <Box fullWidth display="flex" className="main-content" gap={2}>
+        {/* <Box flex="1" maxWidth="25%"> */}
+        <Box>
           <Paper className="sidebar">
             <Typography className="category">کھیل</Typography>
             <Typography className="headline">اولڈ ٹریفورڈ پسندیدہ</Typography>
@@ -45,17 +78,30 @@ const HomePage = () => {
           </Paper>
         </Box>
 
-        <Box flex="3" maxWidth="75%">
-          <Paper className="main-article">
-            <Typography className="category">پاکستان</Typography>
-            <Typography className="headline">
-              بشری بی ڈی کی بیانی میں گنواروں کا کردار, وزیر اعظم نے کیا پیشکش؟
-            </Typography>
-            <Typography className="description">
-              پلی بی آئی ڈی نے ذرا زور دیا۔ بات کو گنوار کو مسئلہ چہل بیاں دی۔
-              کری این کر...
-            </Typography>
-          </Paper>
+        {/* <Box flex="3" maxWidth="75%"> */}
+        <Box>
+          <Box sx={{display:'flex', flexDirection:'row'}}>
+          <Box
+            component="img"
+            src={"https://via.placeholder.com/400"}
+            alt="Content preview"
+            sx={{
+              width: 400,
+              height: 280,
+              objectFit: "cover",
+            }}
+          />
+            <Box className="main-article">
+              <Typography variant="body1" className="category">پاکستان</Typography>
+              <Typography variant="h2" className="headline">
+                بشری بی ڈی کی بیانی میں گنواروں کا کردار, وزیر اعظم نے کیا پیشکش؟
+              </Typography>
+              <Typography variant="body1" className="description">
+                پلی بی آئی ڈی نے ذرا زور دیا۔ بات کو گنوار کو مسئلہ چہل بیاں دی۔
+                کری این کر...
+              </Typography>
+            </Box>
+          </Box>
 
           <Box display="flex" gap={2} mt={2}>
             <Box flex="1">

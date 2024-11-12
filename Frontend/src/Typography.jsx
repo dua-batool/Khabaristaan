@@ -13,7 +13,7 @@ const theme = createTheme({
     },
     h2: {
       fontFamily: 'Noto Nastaliq Urdu, sans-serif',
-      fontSize: 24, // Subheading font size
+      fontSize: 20, // Subheading font size
     },
   },
 });
