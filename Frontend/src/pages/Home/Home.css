@@ -15,35 +15,6 @@ html, body {
     align-items: center;
   }
   
-  .header {
-    background: linear-gradient(to bottom, var(--light-beige) 50%, white 50%);
-  }
-
-  .header-content{
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    padding-left: 60px;
-    padding-right: 60px;
-  }
-  
-  .login-button {
-    background-color: var(--dark-brown) !important;
-    color: var(--light-beige) !important;
-    border-radius: 50px !important;
-    padding-left: 28px !important;
-    padding-right: 28px !important;
-    height: 32px;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    text-align: center !important;
-  }
-  
-  .search-icon {
-    color: var(--dark-brown);
-  }
-
   .left-items {
     display: flex;
     flex-direction: row;

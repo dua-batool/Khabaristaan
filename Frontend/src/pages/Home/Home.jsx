@@ -5,34 +5,15 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import './Home.css';
+import Header from '../../components/Header/Header';
 
 const HomePage = () => {
   const [dateValue, setDateValue] = React.useState(null);
 
   return (
     <Box className="homepage" style={{ width: '100vw', minHeight: '100vh' }}>
-      {/* Header Section */}
-      <Box className="header" style={{ width: '100vw', height: '180px' }}>
-        <Box className="header-content">
-            <Box className="left-items">
-            <Button className="login-button">Login</Button>
-            <Box className="search-icon">
-                <SearchIcon />
-            </Box>
-            </Box>
-            <Box className="nav-links">
-              <Typography variant='h2'>پاکستان</Typography>
-              <Typography variant='h2'>انٹرنیشنل</Typography>
-              <Typography variant='h2'>ادبیات</Typography>
-              <Typography variant='h2'>رجحانات</Typography>
-              <Typography variant='h2'>کلاسیکی ادب</Typography>
-              <Typography variant='h2'>ایڈیٹوریل</Typography>
-            </Box>
-            <Box className="banner">
-              <Typography variant="h1" className="brand-name">ذخیرہ خبر</Typography>
-            </Box>
-        </Box>
-      </Box>
+      
+      <Header />
 
       {/* Title Section */}
       <Box className="title-section" style={{ width: '100vw' }}>
