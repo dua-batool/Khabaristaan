@@ -1,6 +1,5 @@
 import React from 'react';
 import { Box, Button, Typography, Paper, Avatar } from '@mui/material';
-import SearchIcon from '@mui/icons-material/Search';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
@@ -12,7 +11,7 @@ const HomePage = () => {
 
   return (
     <Box className="homepage" style={{ width: '100vw', minHeight: '100vh' }}>
-      
+
       <Header />
 
       {/* Title Section */}
