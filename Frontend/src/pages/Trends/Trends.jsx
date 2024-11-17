@@ -1,9 +1,24 @@
 import { React, useState } from 'react';
 import { Box, Button, Typography, TextField, InputAdornment, Select, MenuItem, InputLabel, FormControl } from '@mui/material';
-import { Close as CloseIcon } from '@mui/icons-material';  // Corrected import for CloseIcon
+import { Close as CloseIcon } from '@mui/icons-material';  
+import { styled } from "@mui/material/styles";
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import './Trends.css';
 import Header from '../../components/Header/Header';
+
+const StyledSelect = styled(Select)(({ theme }) => ({
+    "& .MuiSelect-select": {
+        padding: "4px 8px", // Adjust padding to reduce space inside
+        display: "flex",
+        justifyContent: "flex-end", // Align text to the right
+        alignItems: "center",
+    },
+    "& .MuiSvgIcon-root": {
+        position: "absolute",
+        left: "8px", // Move icon to the left
+        right: "unset",
+    },
+}));
 
 const Trends = () => {
     const [text, setText] = useState('');
@@ -35,10 +50,10 @@ const Trends = () => {
                             />
                         </InputAdornment>
                         ),
-                        style: { textAlign: 'right', height: '80px', borderRadius: '50px', },
+                        style: { textAlign: 'right', height: '60px', borderRadius: '50px', },
                     }}
                     inputProps={{
-                        style: { direction: 'rtl', height: '80px', borderRadius: '50px' }
+                        style: { direction: 'rtl', height: '60px', borderRadius: '50px' }
                     }}
                 />
             </Box>
@@ -59,10 +74,10 @@ const Trends = () => {
                             />
                         </InputAdornment>
                         ),
-                        style: { textAlign: 'right', height: '80px', borderRadius: '50px', },
+                        style: { textAlign: 'right', height: '60px', borderRadius: '50px', },
                     }}
                     inputProps={{
-                        style: { direction: 'rtl', height: '80px', borderRadius: '50px' }
+                        style: { direction: 'rtl', height: '60px', borderRadius: '50px' }
                     }}
                 />
             </Box>
@@ -71,47 +86,110 @@ const Trends = () => {
 
           <Box className="search-filter-section">
 
-            <Box className="dropdowns">
-            <FormControl fullWidth>
-                <InputLabel id="section-label">قسم</InputLabel>
-                <Select
-                    labelId="section-label"
-                    id="section-select"
-                    defaultValue=""
-                    label="قسم"
-                    className="dropdown"
-                    sx={{ width: '200px', textAlign: 'right' }} // Align text to the right
-                    IconComponent={ArrowDropDownIcon} // Position icon to the left
-                    InputProps={{
-                        style: { textAlign: 'right', height: '100px' }, // Right-align the text inside dropdown
-                    }}
-                >
-                    <MenuItem value="">قسم</MenuItem>
-                    <MenuItem value="option1">Option 1</MenuItem>
-                    <MenuItem value="option2">Option 2</MenuItem>
-                </Select>
-            </FormControl>
+            <Box className="dropdowns" fullWidth>
+                <FormControl fullWidth sx={{ direction: 'rtl', width: '200px' }}>
+                    <InputLabel
+                        id="section-label"
+                        sx={{
+                            textAlign: 'right',
+                            fontSize: '16px',
+                            lineHeight: '2.2',
+                            marginTop: '-14px',
+                        }}
+                    >
+                        قسم
+                    </InputLabel>
+                    <Select
+                        labelId="section-label"
+                        id="section-select"
+                        defaultValue=""
+                        label="قسم"
+                        className="dropdown"
+                        sx={{
+                            direction: 'rtl', // Ensures proper alignment for Urdu
+                            textAlign: 'right',
+                            padding: 0,
+                            fontSize: '16px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            height: '40px',
+                            '.MuiSelect-select': {
+                                padding: '4px 8px', // Reduce padding for compact size
+                                display: 'flex',
+                                justifyContent: 'flex-end', // Aligns text to the right
+                                alignItems: 'center',
+                            },
+                            '.MuiSelect-icon': {
+                                order: -1, // Moves the icon to the left
+                                marginRight: '8px', // Adds space between icon and text
+                            },
+                        }}
+                        MenuProps={{
+                            sx: {
+                                '& .MuiPaper-root': {
+                                    direction: 'rtl',
+                                },
+                            },
+                        }}
+                    >
+                        <MenuItem value="">قسم</MenuItem>
+                        <MenuItem value="option1">Option 1</MenuItem>
+                        <MenuItem value="option2">Option 2</MenuItem>
+                    </Select>
+                </FormControl>
+                <FormControl fullWidth sx={{ direction: 'rtl', width: '200px' }}>
+                    <InputLabel
+                        id="duration-label"
+                        sx={{
+                            textAlign: 'right',
+                            fontSize: '16px',
+                            lineHeight: '2.2',
+                            marginTop: '-14px',
+                        }}
+                    >
+                        مدت: 20 سال
+                    </InputLabel>
+                    <Select
+                        labelId="duration-label"
+                        id="duration-select"
+                        defaultValue=""
+                        label="مدت: 20 سال"
+                        className="dropdown"
+                        sx={{
+                            direction: 'rtl',
+                            textAlign: 'right',
+                            padding: 0,
+                            fontSize: '16px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            height: '40px',
+                            '.MuiSelect-select': {
+                                padding: '4px 8px',
+                                display: 'flex',
+                                justifyContent: 'flex-end',
+                                alignItems: 'center',
+                            },
+                            '.MuiSelect-icon': {
+                                order: -1,
+                                marginRight: '8px',
+                            },
+                        }}
+                        MenuProps={{
+                            sx: {
+                                '& .MuiPaper-root': {
+                                    direction: 'rtl',
+                                },
+                            },
+                        }}
+                    >
+                        <MenuItem value="">مدت: 20 سال</MenuItem>
+                        <MenuItem value="5">5 years</MenuItem>
+                        <MenuItem value="10">10 years</MenuItem>
+                        <MenuItem value="20">20 years</MenuItem>
+                    </Select>
+                </FormControl>
 
-            <FormControl fullWidth>
-                <InputLabel id="duration-label">مدت: 20 سال</InputLabel>
-                <Select
-                    labelId="duration-label"
-                    id="duration-select"
-                    defaultValue=""
-                    label="مدت: 20 سال"
-                    className="dropdown"
-                    sx={{ width: '200px', textAlign: 'right' }} // Align text to the right
-                    IconComponent={ArrowDropDownIcon} // Position icon to the left
-                    inputProps={{
-                        style: { textAlign: 'right' }, // Right-align the text inside dropdown
-                    }}
-                >
-                    <MenuItem value="">مدت: 20 سال</MenuItem>
-                    <MenuItem value="5">5 years</MenuItem>
-                    <MenuItem value="10">10 years</MenuItem>
-                    <MenuItem value="20">20 years</MenuItem>
-                </Select>
-            </FormControl>
+
             </Box>
 
 
@@ -119,35 +197,48 @@ const Trends = () => {
     
           {/* Trend Graph Section */}
           <Box className="trend-graph-section">
-            <Typography className="graph-title">Use over time for: پرنٹ</Typography>
             <Box className="graph-placeholder"> {/* Replace with actual graph component */}
               <img src="graph-placeholder.png" alt="Usage Trend Graph" />
             </Box>
           </Box>
     
           {/* Results Section */}
-          <Typography variant="h2" className="category-title">مشہور مختلف مضامین</Typography>
+          <Box className="category-title">
+            <Typography variant="h1" >مشہور مختلف مضامین</Typography>
+          </Box>
+
           <Box className="results-section">
             <Box className="left-results">
-              <Typography className="result-item">نیب نے آسیہ کے کردار پر سوالات اٹھا دیے</Typography>
-              <Button className="category-button">پاکستان</Button>
-              <Typography className="result-item">نیب نے آسیہ کے کردار پر سوالات اٹھا دیے</Typography>
-              <Button className="category-button">انٹرنیشنل</Button>
-              <Typography className="result-item">نیب نے آسیہ کے کردار پر سوالات اٹھا دیے</Typography>
-              <Button className="category-button">انٹرنیشنل</Button>
+                <Box className="items">
+                    <Typography variant="h2" className="result-item">نیپرا نے آئیسکو پر 5 کروڑ روپے کا جرمانہ لگادیا</Typography>
+                    <Typography variant="body1" className="category">انٹرنیشنل</Typography>
+                </Box>
+                <Box className="items">
+                    <Typography variant="h2" className="result-item">نیپرا نے آئیسکو پر 5 کروڑ روپے کا جرمانہ لگادیا</Typography>
+                    <Typography variant="body1" className="category">انٹرنیشنل</Typography>
+                </Box>
+                <Box className="items">
+                    <Typography variant="h2" className="result-item">نیپرا نے آئیسکو پر 5 کروڑ روپے کا جرمانہ لگادیا</Typography>
+                    <Typography variant="body1" className="category">انٹرنیشنل</Typography>
+                </Box>
             </Box>
             
             <Box className="right-results">
-              <Box className="right-item">
-                <Button className="right-category-button">پاکستان</Button>
-                <Typography className="right-item-text">پاکستان: ڈیزل قیمتوں کا استحکام چیلنج</Typography>
-              </Box>
-              <Box className="right-item">
-                <Button className="right-category-button">پاکستان</Button>
-                <Typography className="right-item-text">پاکستان: ڈیزل قیمتوں کا استحکام چیلنج</Typography>
-              </Box>
+                <Box className="items">
+                        <Typography variant="h2" className="result-item">پاکستان جوڈیشل کمیشن کا اعلامیہ جاری کردیا گیا</Typography>
+                        <Typography variant="body1" className="category">پاکستان</Typography>
+                    </Box>
+                    <Box className="items">
+                        <Typography variant="h2" className="result-item">پاکستان جوڈیشل کمیشن کا اعلامیہ جاری کردیا گیا</Typography>
+                        <Typography variant="body1" className="category">پاکستان</Typography>
+                    </Box>
+                    <Box className="items">
+                        <Typography variant="h2" className="result-item">پاکستان جوڈیشل کمیشن کا اعلامیہ جاری کردیا گیا</Typography>
+                        <Typography variant="body1" className="category">پاکستان</Typography>
+                    </Box>
+                </Box>
             </Box>
-          </Box>
+
         </Box>
         </Box>
       );

@@ -20,7 +20,6 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
     font-family: 'Noto Nastaliq Urdu', serif; /* Urdu font */
   }
 
@@ -28,21 +27,23 @@ html, body {
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
  }
  
  .search-item {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
+    margin-right: 60px;
     flex: 1; 
  }
  
   
   /* Search and Filter Section */
   .search-filter-section {
+    width: 100%;
     display: flex;
-    gap: 10px;
-    align-items: center;
+    justify-content: flex-end;
+    margin-right: 120px;
+    margin-top: 24px;
     margin-bottom: 20px;
   }
   
@@ -64,19 +65,21 @@ html, body {
   
   .close-button {
     font-size: 1.5rem;
-    color: #333;
+    color: var(--dark-brown) !important;
   }
   
   .dropdowns {
     display: flex;
-    gap: 5px;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 20px;
   }
   
   .dropdown {
-    background-color: #eae0d5;
     border: none;
     padding: 5px;
-    border-radius: 5px;
+    border-radius: 50px !important;
+    height: 56px;
   }
   
   /* Trend Graph Section */
@@ -100,55 +103,55 @@ html, body {
   /* Results Section */
   .results-section {
     display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    text-align: right;
     gap: 20px;
     width: 100%;
+  }
+
+  .right-results {
+    padding-right: 60px;
   }
   
   .left-results, .right-results {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    text-align: right;
+    gap: 30px;
+  }
+
+  .items{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 28px;
   }
   
   .result-item {
-    font-size: 1rem;
-    color: #333;
+    color: var(--dark-brown);
   }
-  
-  .category-button {
-    background-color: #eae0d5;
-    color: #666;
-    border-radius: 15px;
-    padding: 5px 10px;
+
+  .category {
+    font-size: 14px;
+    color: var(--dark-brown);
+    background-color: var(--light-beige);
+    border-radius: 20px;
+    padding: 8px 24px;
+    margin-top: 10px;
   }
   
   .category-title {
     width: 100%;
     display: flex;
     justify-content: flex-end;
-    padding-right: 60px;
+    padding-right: 120px;
     font-weight: bold;
     font-size: 1.2rem;
-    color: #333;
-    margin-bottom: 10px;
+    color: var(--dark-brown);
+    margin-bottom: 36px;
+    margin-top: 20px;
   }
   
-  .right-item {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-  }
-  
-  .right-category-button {
-    background-color: #eae0d5;
-    color: #666;
-    border-radius: 15px;
-    padding: 5px 10px;
-  }
-  
-  .right-item-text {
-    font-size: 1rem;
-    color: #333;
-  }
   

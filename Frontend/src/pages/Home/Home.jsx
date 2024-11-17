@@ -1,5 +1,7 @@
 import React from 'react';
-import { Box, Button, Typography, Paper, Avatar } from '@mui/material';
+import { Box, Button, Typography, Paper, Avatar, IconButton } from '@mui/material';
+import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
+import { MobileDatePicker } from "@mui/x-date-pickers/MobileDatePicker";
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
@@ -8,6 +10,14 @@ import Header from '../../components/Header/Header';
 
 const HomePage = () => {
   const [dateValue, setDateValue] = React.useState(null);
+  const [headlineYear, setHeadlineYear] = React.useState(2024); // Default year
+
+  const handleDateChange = (newDate) => {
+    if (newDate) {
+      setDateValue(newDate);
+      setHeadlineYear(newDate.getFullYear()); // Extract year from the selected date
+    }
+  };
 
   return (
     <Box className="homepage" style={{ width: '100vw', minHeight: '100vh' }}>
@@ -16,26 +26,34 @@ const HomePage = () => {
 
       {/* Title Section */}
       <Box className="title-section" style={{ width: '100vw' }}>
-        <Typography variant="h1" className="date">ک۲۰۲۴ کی خبریں</Typography>
-      </Box>
 
-      <LocalizationProvider dateAdapter={AdapterDateFns}>
-        <DatePicker
-          // label="تاریخ منتخب کریں"
-          label="Set Date"
-          value={dateValue} // state to handle the selected date
-          onChange={(newDate) => setDateValue(newDate)} // function to set the selected date
-          renderInput={(params) => (
-            <TextField
-              {...params}
-              fullWidth
-              margin="0px"
-              variant="outlined"
-              placeholder="dd/mm/yyyy"
-            />
-          )}
-        />
-      </LocalizationProvider>
+        {/* Date Picker */}
+        <LocalizationProvider dateAdapter={AdapterDateFns}>
+          <DatePicker
+            // label="تاریخ منتخب کریں"
+            label="Set Date"
+            value={dateValue} // state to handle the selected date
+            onChange={handleDateChange}
+            renderInput={(params) => (
+              <TextField
+                {...params}
+                fullWidth
+                margin="0px"
+                variant="outlined"
+                placeholder="dd/mm/yyyy"
+              />
+            )}
+          />
+        </LocalizationProvider>
+
+        <Box className="title-text">
+          {/* <Typography variant="h1" className="date">ک۲۰۲۴  کی خبریں</Typography> */}
+          <Typography variant="h1" className="date">کی خبریں</Typography>
+          <Typography variant="h1" className="date">{headlineYear}</Typography>
+          {/* <Typography variant="h1" className="date">۲۰۲۴</Typography> */}
+        </Box>
+
+      </Box>
 
       {/* Main Content Section */}
       <Box fullWidth display="flex" className="main-content" gap={2}>
@@ -58,27 +76,26 @@ const HomePage = () => {
           </Paper>
         </Box>
 
-        {/* <Box flex="3" maxWidth="75%"> */}
-        <Box>
-          <Box sx={{display:'flex', flexDirection:'row'}}>
-          <Box
+        <Box flex="2" maxWidth="60%">
+        {/* <Box> */}
+          <Box gap={2} sx={{display:'flex', flexDirection:'row'}}>
+          <Box flex="2"
             component="img"
             src={"https://via.placeholder.com/400"}
             alt="Content preview"
             sx={{
               width: 400,
-              height: 280,
+              height: 252,
               objectFit: "cover",
             }}
           />
-            <Box className="main-article">
+            <Box flex="3" gap={3} className="main-article">
               <Typography variant="body1" className="category">پاکستان</Typography>
               <Typography variant="h2" className="headline">
-                بشری بی ڈی کی بیانی میں گنواروں کا کردار, وزیر اعظم نے کیا پیشکش؟
+              بشریٰ بی بی کی رہائی میں گنڈاپور کا کردار، وزیراعلیٰ نے کیا پیشکش کی؟ 
               </Typography>
               <Typography variant="body1" className="description">
-                پلی بی آئی ڈی نے ذرا زور دیا۔ بات کو گنوار کو مسئلہ چہل بیاں دی۔
-                کری این کر...
+              پی ٹی آئی ذرائع نے دی نیوز کو بتایا ہے کہ گنڈا پور کو معلوم تھا کہ بشریٰ بی بی کو کسی اور کیس میں گرفتار نہیں کیا جائے گا، حکام کی جانب سے انہیں آگاہ کیا گیا کہ بشریٰ بی بی کی اڈیالہ جیل سے رہائی کے بعد ان کی محفوظ۔۔۔
               </Typography>
             </Box>
           </Box>
