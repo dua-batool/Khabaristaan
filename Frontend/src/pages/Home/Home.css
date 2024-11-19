@@ -34,13 +34,13 @@ html, body {
   }
 
   .banner {
-    background-color: var(--dark-brown); /* Brown color */
+    background-color: var(--dark-brown); 
     color: white;
     padding: 60px 30px;
     position: relative;
     text-align: center;
     font-weight: bold;
-    clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%); /* Triangular bottom */
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%); 
   }
   
   .brand-name {
@@ -73,8 +73,25 @@ html, body {
   }
   
   .sidebar {
-    background-color: #fff;
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 32px;
+    margin-right: 20px;
+  }
+
+  .sidebar-item {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .sidebar-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
   }
   
   .category {
@@ -86,15 +103,7 @@ html, body {
     margin-top: 10px;
   }
   
-  .headline {
-    text-align: right;
-    font-size: 16px;
-    font-weight: bold;
-    margin-top: 5px;
-  }
-  
   .author {
-    font-size: 12px;
     color: #666;
   }
   
@@ -116,14 +125,16 @@ html, body {
     line-height: 32px !important;
   }
   
+  .sub-articles {
+    margin-right: 20px;
+    display: flex;
+    flex-direction: row;
+    padding-left: 20px;
+  }
+
   .sub-article {
-    background-color: #fff;
-    padding: 15px;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
   }
-  
-  .sub-article .headline {
-    font-size: 14px;
-    font-weight: bold;
-  }
-  

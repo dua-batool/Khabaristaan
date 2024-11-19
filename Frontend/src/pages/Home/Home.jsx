@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Button, Typography, Paper, Avatar, IconButton } from '@mui/material';
+import { Box, Button, Typography, Paper, Avatar, IconButton, Divider } from '@mui/material';
 import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 import { MobileDatePicker } from "@mui/x-date-pickers/MobileDatePicker";
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
@@ -57,23 +57,70 @@ const HomePage = () => {
 
       {/* Main Content Section */}
       <Box fullWidth display="flex" className="main-content" gap={2}>
-        {/* <Box flex="1" maxWidth="25%"> */}
-        <Box>
-          <Paper className="sidebar">
-            <Typography className="category">کھیل</Typography>
-            <Typography className="headline">اولڈ ٹریفورڈ پسندیدہ</Typography>
-            <Typography className="author">کولن جسٹن جمی آندری</Typography>
+        <Box flex="1" maxWidth="32%" className="sidebar">
+        {/* <Box className="sidebar"> */}
+            <Typography variant="h1">
+            ادارتی پسند
+            </Typography>
 
-            <Typography className="category">پاکستان</Typography>
-            <Typography className="headline">سیاست ہو تو ایسی</Typography>
-            <Typography className="author">سلیم صافی</Typography>
+            <Box className="sidebar-item">
+              <Box>
+                  <Typography className="category">کھیل</Typography>
+                </Box>
+              <Box className="sidebar-text">
+                <Typography variant="h2">گڈلگ جسٹس یحییٰ آفریدی</Typography>
+                <Typography variant="body1" className="author">حامد میر</Typography>
+              </Box>
+            </Box>
 
-            <Typography className="category">انٹرنیشنل</Typography>
-            <Typography className="headline">واقعات اور حادثات ظلمت</Typography>
-            <Typography className="author">ایس اے زاہد</Typography>
+            {/* <Divider sx={{color:"black"}} /> */}
 
-            {/* Additional items go here */}
-          </Paper>
+            <Box className="sidebar-item">
+              <Box>
+                  <Typography className="category">پاکستاں</Typography>
+                </Box>
+              <Box className="sidebar-text">
+                <Typography variant="h2">سیاست ہو تو ایسی</Typography>
+                <Typography variant="body1" className="author">سلیم صافی</Typography>
+              </Box>
+            </Box>
+
+            {/* <Divider sx={{color:"black"}} /> */}
+
+            <Box className="sidebar-item">
+              <Box>
+                  <Typography className="category">ایڈیٹوریل</Typography>
+                </Box>
+              <Box className="sidebar-text">
+                <Typography variant="h2">دانستہ اور نادانستہ غلطیاں</Typography>
+                <Typography variant="body1" className="author">ایس اے زاہد</Typography>
+              </Box>
+            </Box>
+
+            {/* <Divider sx={{color:"black"}} /> */}
+
+            <Box className="sidebar-item">
+              <Box>
+                  <Typography className="category">ایڈیٹوریل</Typography>
+                </Box>
+              <Box className="sidebar-text">
+                <Typography variant="h2">گڈلگ جسٹس یحییٰ آفریدی</Typography>
+                <Typography variant="body1" className="author">حامد میر</Typography>
+              </Box>
+            </Box>
+
+            {/* <Divider sx={{color:"black"}} /> */}
+
+            <Box className="sidebar-item">
+              <Box>
+                  <Typography className="category">کلاسیفائیڈ</Typography>
+                </Box>
+              <Box className="sidebar-text">
+                <Typography variant="h2">گڈلگ جسٹس یحییٰ آفریدی</Typography>
+                <Typography variant="body1" className="author">حامد میر</Typography>
+              </Box>
+            </Box>
+
         </Box>
 
         <Box flex="2" maxWidth="60%">
@@ -100,30 +147,43 @@ const HomePage = () => {
             </Box>
           </Box>
 
-          <Box display="flex" gap={2} mt={2}>
-            <Box flex="1">
-              <Paper className="sub-article">
+          <Divider />
+
+          <Box className="sub-articles" gap={2} mt={4}>
+            <Box className="sub-article" flex="1">
                 <Typography className="category">انٹرنیشنل</Typography>
-                <Typography className="headline">
-                  بشری بی ڈی کی بیانی میں گنواروں کا کردار
+                <Box 
+                  component="img"
+                  src={"https://via.placeholder.com/300"}
+                  alt="Content preview"
+                  sx={{
+                    width: 300,
+                    height: 140,
+                    objectFit: "cover",
+                  }}
+                />
+                <Typography variant="h2" className="headline">
+                بشریٰ بی بی کی رہائی میں گنڈاپور کا کردار، وزیراعلیٰ نے کیا پیشکش کی؟
                 </Typography>
-              </Paper>
             </Box>
-            <Box flex="1">
-              <Paper className="sub-article">
+
+            {/* <Divider /> */}
+          
+            <Box className="sub-article" flex="1">
                 <Typography className="category">انٹرنیشنل</Typography>
-                <Typography className="headline">
-                  بشری بی ڈی کی بیانی میں گنواروں کا کردار
+                <Box 
+                  component="img"
+                  src={"https://via.placeholder.com/300"}
+                  alt="Content preview"
+                  sx={{
+                    width: 300,
+                    height: 140,
+                    objectFit: "cover",
+                  }}
+                />
+                <Typography variant="h2" className="headline">
+                بشریٰ بی بی کی رہائی میں گنڈاپور کا کردار، وزیراعلیٰ نے کیا پیشکش کی؟
                 </Typography>
-              </Paper>
-            </Box>
-            <Box flex="1">
-              <Paper className="sub-article">
-                <Typography className="category">انٹرنیشنل</Typography>
-                <Typography className="headline">
-                  بشری بی ڈی کی بیانی میں گنواروں کا کردار
-                </Typography>
-              </Paper>
             </Box>
           </Box>
         </Box>
