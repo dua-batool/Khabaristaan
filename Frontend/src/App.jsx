@@ -2,7 +2,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, } from 'react-router-dom';
 import HomePage from './pages/Home/Home';
-import Trends from './pages/Trends/Trends'
+import Trends from './pages/Trends/Trends';
+import Search from './pages/Search/Search';
 import Chroma from './pages/Chroma/Chroma';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path='/trends' element={<Trends />} />
+          <Route path='/search' element={<Search />}/>
           <Route path='/chroma' element={<Chroma />} />
         </Routes>
       </div>
