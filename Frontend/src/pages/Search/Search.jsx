@@ -1,143 +1,34 @@
-import { React, useState } from 'react';
-import { Box, Button, Typography, TextField, InputAdornment, Select, MenuItem, InputLabel, FormControl } from '@mui/material';
-import { Close as CloseIcon } from '@mui/icons-material';  
-import { styled } from "@mui/material/styles";
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import React from 'react';
+import { Box, Typography, Divider, FormControl, InputLabel, InputAdornment, MenuItem, Select } from '@mui/material';
 import './Search.css';
 import Header from '../../components/Header/Header';
-
-const StyledSelect = styled(Select)(({ theme }) => ({
-    "& .MuiSelect-select": {
-        padding: "4px 8px", // Adjust padding to reduce space inside
-        display: "flex",
-        justifyContent: "flex-end", // Align text to the right
-        alignItems: "center",
-    },
-    "& .MuiSvgIcon-root": {
-        position: "absolute",
-        left: "8px", // Move icon to the left
-        right: "unset",
-    },
-}));
+import graph from '../../assets/search-graph.png'
 
 const Search = () => {
-    const [text, setText] = useState('');
 
-    const handleClear = () => {
-        setText('');
-    };
+  return (
+    <Box className="homepage" style={{ width: '100vw', minHeight: '100vh' }}>
 
-    return (
-        <Box>
-        <Header />
-        <Box className="container">
-          {/* Top Section with Search and Filters */}
+      <Header />
 
-          <Box className="search-section">
-            <Box className="search-item">
-                <TextField
-                    variant="outlined"
-                    value={text}
-                    onChange={(e) => setText(e.target.value)}
-                    placeholder="تلاش کریں"
-                    sx={{ width: '480px', borderRadius: '50px' }}
-                    InputProps={{
-                        startAdornment: (
-                        <InputAdornment position="start">
-                            <CloseIcon
-                                style={{ cursor: 'pointer' }}
-                                onClick={handleClear}
-                            />
-                        </InputAdornment>
-                        ),
-                        style: { textAlign: 'right', height: '60px', borderRadius: '50px', },
-                    }}
-                    inputProps={{
-                        style: { direction: 'rtl', height: '60px', borderRadius: '50px' }
-                    }}
-                />
-            </Box>
-
-            <Box className="search-item">
-                <TextField
-                    variant="outlined"
-                    value={text}
-                    onChange={(e) => setText(e.target.value)}
-                    placeholder="تلاش کریں"
-                    sx={{ width: '480px', borderRadius: '50px' }}
-                    InputProps={{
-                        startAdornment: (
-                        <InputAdornment position="start">
-                            <CloseIcon
-                                style={{ cursor: 'pointer' }}
-                                onClick={handleClear}
-                            />
-                        </InputAdornment>
-                        ),
-                        style: { textAlign: 'right', height: '60px', borderRadius: '50px', },
-                    }}
-                    inputProps={{
-                        style: { direction: 'rtl', height: '60px', borderRadius: '50px' }
-                    }}
-                />
-            </Box>
+      {/* Title Section */}
+      <Box className="title-section" style={{ width: '100vw' }}>
+        <Box className="title-text">
+          <Typography variant="h1" className="date">
+          “پٹرول”
+          </Typography>
         </Box>
 
+      </Box>
 
-          <Box className="search-filter-section">
+      {/* Main Content Section */}
+      <Box fullWidth display="flex" className="main-content" gap={2}>
+        <Box flex="1" maxWidth="20%" className="sidebar">
+        {/* <Box className="sidebar"> */}
 
-            <Box className="dropdowns" fullWidth>
-                <FormControl fullWidth sx={{ direction: 'rtl', width: '200px' }}>
-                    <InputLabel
-                        id="section-label"
-                        sx={{
-                            textAlign: 'right',
-                            fontSize: '16px',
-                            lineHeight: '2.2',
-                            marginTop: '-14px',
-                        }}
-                    >
-                        قسم
-                    </InputLabel>
-                    <Select
-                        labelId="section-label"
-                        id="section-select"
-                        defaultValue=""
-                        label="قسم"
-                        className="dropdown"
-                        sx={{
-                            direction: 'rtl', // Ensures proper alignment for Urdu
-                            textAlign: 'right',
-                            padding: 0,
-                            fontSize: '16px',
-                            display: 'flex',
-                            alignItems: 'center',
-                            height: '40px',
-                            '.MuiSelect-select': {
-                                padding: '4px 8px', // Reduce padding for compact size
-                                display: 'flex',
-                                justifyContent: 'flex-end', // Aligns text to the right
-                                alignItems: 'center',
-                            },
-                            '.MuiSelect-icon': {
-                                order: -1, // Moves the icon to the left
-                                marginRight: '8px', // Adds space between icon and text
-                            },
-                        }}
-                        MenuProps={{
-                            sx: {
-                                '& .MuiPaper-root': {
-                                    direction: 'rtl',
-                                },
-                            },
-                        }}
-                    >
-                        <MenuItem value="">قسم</MenuItem>
-                        <MenuItem value="option1">Option 1</MenuItem>
-                        <MenuItem value="option2">Option 2</MenuItem>
-                    </Select>
-                </FormControl>
-                <FormControl fullWidth sx={{ direction: 'rtl', width: '200px' }}>
+
+        <Box className="dropdowns" fullWidth>
+                <FormControl fullWidth sx={{ direction: 'rtl', width: '260px' }}>
                     <InputLabel
                         id="duration-label"
                         sx={{
@@ -147,13 +38,13 @@ const Search = () => {
                             marginTop: '-14px',
                         }}
                     >
-                        مدت: 20 سال
+                        گزشتہ ایک ماہ
                     </InputLabel>
                     <Select
                         labelId="duration-label"
                         id="duration-select"
                         defaultValue=""
-                        label="مدت: 20 سال"
+                        label="گزشتہ ایک ماہ"
                         className="dropdown"
                         sx={{
                             direction: 'rtl',
@@ -193,55 +84,100 @@ const Search = () => {
             </Box>
 
 
-          </Box>
-    
-          {/* Trend Graph Section */}
-          <Box className="trend-graph-section">
-            <Box className="graph-placeholder"> {/* Replace with actual graph component */}
-              <img src="graph-placeholder.png" alt="Usage Trend Graph" />
-            </Box>
-          </Box>
-    
-          {/* Results Section */}
-          <Box className="category-title">
-            <Typography variant="h1" >مشہور مختلف مضامین</Typography>
-          </Box>
 
-          <Box className="results-section">
-            <Box className="left-results">
-                <Box className="items">
-                    <Typography variant="h2" className="result-item">نیپرا نے آئیسکو پر 5 کروڑ روپے کا جرمانہ لگادیا</Typography>
-                    <Typography variant="body1" className="category">انٹرنیشنل</Typography>
-                </Box>
-                <Box className="items">
-                    <Typography variant="h2" className="result-item">نیپرا نے آئیسکو پر 5 کروڑ روپے کا جرمانہ لگادیا</Typography>
-                    <Typography variant="body1" className="category">انٹرنیشنل</Typography>
-                </Box>
-                <Box className="items">
-                    <Typography variant="h2" className="result-item">نیپرا نے آئیسکو پر 5 کروڑ روپے کا جرمانہ لگادیا</Typography>
-                    <Typography variant="body1" className="category">انٹرنیشنل</Typography>
-                </Box>
-            </Box>
-            
-            <Box className="right-results">
-                <Box className="items">
-                        <Typography variant="h2" className="result-item">پاکستان جوڈیشل کمیشن کا اعلامیہ جاری کردیا گیا</Typography>
-                        <Typography variant="body1" className="category">پاکستان</Typography>
+            <Typography variant="h1">
+            متعلقہ موضوعات
+            </Typography>
+
+            <Box className="sidebar-item-section">
+
+                <Box className="sidebar-item">
+                <Box>
+                    <Typography variant="body1">155 نتائج</Typography>
                     </Box>
-                    <Box className="items">
-                        <Typography variant="h2" className="result-item">پاکستان جوڈیشل کمیشن کا اعلامیہ جاری کردیا گیا</Typography>
-                        <Typography variant="body1" className="category">پاکستان</Typography>
-                    </Box>
-                    <Box className="items">
-                        <Typography variant="h2" className="result-item">پاکستان جوڈیشل کمیشن کا اعلامیہ جاری کردیا گیا</Typography>
-                        <Typography variant="body1" className="category">پاکستان</Typography>
-                    </Box>
+                <Box className="sidebar-text">
+                    <Typography variant="body1">پٹرول کی قیمت</Typography>
                 </Box>
+                </Box>
+
+                <Box className="sidebar-item">
+                <Box>
+                    <Typography variant="body1">23 نتائج</Typography>
+                    </Box>
+                <Box className="sidebar-text">
+                    <Typography variant="body1">بڑھتی ہوئی مہنگائی</Typography>
+                </Box>
+                </Box>
+
+                <Box className="sidebar-item">
+                <Box>
+                    <Typography variant="body1">18 نتائج</Typography>
+                    </Box>
+                <Box className="sidebar-text">
+                    <Typography variant="body1">حکومت پاکستان</Typography>
+                </Box>
+                </Box>
+
+                <Box className="sidebar-item">
+                <Box>
+                    <Typography variant="body1">206 نتائج</Typography>
+                    </Box>
+                <Box className="sidebar-text">
+                    <Typography variant="body1">کار ایندھن</Typography>
+                </Box>
+                </Box>
+
             </Box>
 
         </Box>
+
+        <Box flex="2" maxWidth="60%">
+            <Box maxWidth="60%"> 
+                <img src={graph} alt="Usage Trend Graph" />
+            </Box>
+
+          <Box className="sub-articles" gap={2} mt={4}>
+            <Box className="sidebar-item">
+                <Box className="date">
+                    <Typography variant="h2">
+                    ۲۰۲۴.۲.۵
+                    </Typography>
+                </Box>
+                <Box className="sub-article">
+                    <Box className="sidebar-text">
+                        <Typography variant="h2">گڈلگ جسٹس یحییٰ آفریدی</Typography>
+                        <Typography variant="body1" className="author"> پولیس کے مطابق ڈیفنس فیز 5 توحید کمرشل میں فلیٹ سے 3 سے 4 روز پرانی لاش ملی ہے۔</Typography>
+                    </Box>
+                    <Box>
+                    <Typography className="category">کھیل</Typography>
+                </Box>
+              </Box>
+            </Box>
+
+            <Divider />
+          
+            <Box className="sidebar-item">
+                <Box className="date">
+                    <Typography variant="h2">
+                    ۲۰۲۴.۲.۵
+                    </Typography>
+                </Box>
+                <Box className="sub-article">
+                    <Box className="sidebar-text">
+                        <Typography variant="h2">سیاست ہو تو ایسی</Typography>
+                        <Typography variant="body1" className="author">پولیس نے بتایا کہ مقتول کے جسم پر گولی کا نشان ہے اور مقتول کی شناخت غنی الرحمان کے نام سے ہوئی ہے۔</Typography>
+                    </Box>
+                    <Box>
+                    <Typography className="category">پاکستاں</Typography>
+                </Box>
+              </Box>
+            </Box>
+
+          </Box>
         </Box>
-      );
-}
+      </Box>
+    </Box>
+  );
+};
 
 export default Search;

@@ -11,9 +11,11 @@ const Header = () => {
         <Box className="header-content">
           <Box className="left-items">
             <Button className="login-button">Login</Button>
-            <Box className="search-icon">
-                <SearchIcon />
-            </Box>
+            <Link to="/search" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <Box className="search-icon">
+                  <SearchIcon />
+              </Box>
+            </Link>
           </Box>
           <Box className="nav-links">
             <Typography variant='h2'>اخبارات</Typography>

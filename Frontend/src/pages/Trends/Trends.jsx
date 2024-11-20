@@ -2,9 +2,9 @@ import { React, useState } from 'react';
 import { Box, Button, Typography, TextField, InputAdornment, Select, MenuItem, InputLabel, FormControl } from '@mui/material';
 import { Close as CloseIcon } from '@mui/icons-material';  
 import { styled } from "@mui/material/styles";
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import './Trends.css';
 import Header from '../../components/Header/Header';
+import graph from '../../assets/search-graph.png'
 
 const StyledSelect = styled(Select)(({ theme }) => ({
     "& .MuiSelect-select": {
@@ -39,7 +39,7 @@ const Trends = () => {
                     variant="outlined"
                     value={text}
                     onChange={(e) => setText(e.target.value)}
-                    placeholder="تلاش کریں"
+                    placeholder="موازنہ"
                     sx={{ width: '480px', borderRadius: '50px' }}
                     InputProps={{
                         startAdornment: (
@@ -63,7 +63,7 @@ const Trends = () => {
                     variant="outlined"
                     value={text}
                     onChange={(e) => setText(e.target.value)}
-                    placeholder="تلاش کریں"
+                    placeholder="پٹرول"
                     sx={{ width: '480px', borderRadius: '50px' }}
                     InputProps={{
                         startAdornment: (
@@ -74,7 +74,7 @@ const Trends = () => {
                             />
                         </InputAdornment>
                         ),
-                        style: { textAlign: 'right', height: '60px', borderRadius: '50px', },
+                        style: { textAlign: 'right', height: '60px', borderRadius: '50px' },
                     }}
                     inputProps={{
                         style: { direction: 'rtl', height: '60px', borderRadius: '50px' }
@@ -197,8 +197,8 @@ const Trends = () => {
     
           {/* Trend Graph Section */}
           <Box className="trend-graph-section">
-            <Box className="graph-placeholder"> {/* Replace with actual graph component */}
-              <img src="graph-placeholder.png" alt="Usage Trend Graph" />
+            <Box > {/* Replace with actual graph component */}
+              <img src={graph} alt="Usage Trend Graph" width={1200} />
             </Box>
           </Box>
     
