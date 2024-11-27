@@ -149,8 +149,8 @@ const HomePage = () => {
 
           <Divider />
 
-          <Box className="sub-articles" gap={2} mt={4}>
-            <Box className="sub-article" flex="1">
+          <Box className="sub-articles2" gap={2} mt={4}>
+            <Box className="sub-article2" flex="1">
                 <Typography className="category">انٹرنیشنل</Typography>
                 <Box 
                   component="img"
@@ -162,14 +162,14 @@ const HomePage = () => {
                     objectFit: "cover",
                   }}
                 />
-                <Typography variant="h2" className="headline">
+                <Typography variant="h2" className="headline2">
                 بشریٰ بی بی کی رہائی میں گنڈاپور کا کردار، وزیراعلیٰ نے کیا پیشکش کی؟
                 </Typography>
             </Box>
 
             {/* <Divider /> */}
           
-            <Box className="sub-article" flex="1">
+            <Box className="sub-article2" flex="1">
                 <Typography className="category">انٹرنیشنل</Typography>
                 <Box 
                   component="img"
@@ -181,10 +181,11 @@ const HomePage = () => {
                     objectFit: "cover",
                   }}
                 />
-                <Typography variant="h2" className="headline">
+                <Typography variant="h2" className="headline2">
                 بشریٰ بی بی کی رہائی میں گنڈاپور کا کردار، وزیراعلیٰ نے کیا پیشکش کی؟
                 </Typography>
             </Box>
+
           </Box>
         </Box>
       </Box>
