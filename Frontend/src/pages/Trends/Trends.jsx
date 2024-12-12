@@ -4,7 +4,8 @@ import { Close as CloseIcon } from '@mui/icons-material';
 import { styled } from "@mui/material/styles";
 import './Trends.css';
 import Header from '../../components/Header/Header';
-import graph from '../../assets/search-graph.png'
+import graph from '../../assets/search-graph.png';
+import KeywordTrendFromCSV from './KeywordTrendFromCSV';
 
 const StyledSelect = styled(Select)(({ theme }) => ({
     "& .MuiSelect-select": {
@@ -196,11 +197,16 @@ const Trends = () => {
           </Box>
     
           {/* Trend Graph Section */}
-          <Box className="trend-graph-section">
-            <Box > {/* Replace with actual graph component */}
+          {/* <Box className="trend-graph-section">
+            <Box > 
               <img src={graph} alt="Usage Trend Graph" width={1200} />
             </Box>
-          </Box>
+          </Box> */}
+
+          {/* Trend Graph Section */}
+        <Box className="trend-graph-section">
+            <KeywordTrendFromCSV />
+        </Box>
     
           {/* Results Section */}
           <Box className="category-title">

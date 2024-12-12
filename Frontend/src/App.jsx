@@ -5,6 +5,7 @@ import HomePage from './pages/Home/Home';
 import Trends from './pages/Trends/Trends';
 import Search from './pages/Search/Search';
 import Chroma from './pages/Chroma/Chroma';
+import AdminPanel from './pages/Admin/AdminPanel';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path='/trends' element={<Trends />} />
           <Route path='/search' element={<Search />}/>
           <Route path='/chroma' element={<Chroma />} />
+          <Route path='/admin' element={<AdminPanel />} />
         </Routes>
       </div>
   );
