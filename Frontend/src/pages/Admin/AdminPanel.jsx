@@ -4,6 +4,10 @@ import { Box, Typography } from '@mui/material';
 import './AdminPanel.css';
 import UploadNewspapers from '../../components/Admin/UploadNewspaper';
 import DeleteNewspapers from '../../components/Admin/DeleteNewspaper';
+import NewspaperIcon from '@mui/icons-material/Newspaper';
+import DescriptionIcon from '@mui/icons-material/Description'; // For e-paper
+import ArticleIcon from '@mui/icons-material/Article';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const AdminPanel = () => {
     const [activeTab, setActiveTab] = useState('uploadNewspaper'); // Set initial active tab
@@ -16,8 +20,8 @@ const AdminPanel = () => {
             case 'deleteNewspaper':
                 return <Typography><DeleteNewspapers /></Typography>;
             case 'uploadArticle':
-                return <Typography>Upload Article Content</Typography>;
-            case 'uploadEPaper':
+                return <Typography><NewspaperIcon /></Typography>;
+            case 'deleteArticle':
                 return <Typography>Upload E-Paper Content</Typography>;
             default:
                 return <Typography>Choose an option from the tabs</Typography>;
@@ -33,25 +37,37 @@ const AdminPanel = () => {
                         className={`tab ${activeTab === 'uploadNewspaper' ? 'active' : ''}`} 
                         onClick={() => setActiveTab('uploadNewspaper')}
                     >
-                        <Typography variant="h2">Upload Newspaper</Typography>
+                        <Box className='tabContent'>
+                            <NewspaperIcon />
+                            <Typography sx={{ fontFamily: 'Georgia', fontWeight: 400 }} variant="h2">Upload Newspaper</Typography>
+                        </Box>
                     </Box>
                     <Box 
                         className={`tab ${activeTab === 'deleteNewspaper' ? 'active' : ''}`} 
                         onClick={() => setActiveTab('deleteNewspaper')}
                     >
-                        <Typography variant="h2">Delete Newspaper</Typography>
+                        <Box className='tabContent'>
+                            <DeleteIcon />
+                            <Typography sx={{ fontFamily: 'Georgia', fontWeight: 400 }} variant="h2">Delete Newspaper</Typography>
+                        </Box>
                     </Box>
                     <Box 
                         className={`tab ${activeTab === 'uploadArticle' ? 'active' : ''}`} 
                         onClick={() => setActiveTab('uploadArticle')}
                     >
-                        <Typography variant="h2">Upload Article</Typography>
+                        <Box className='tabContent'>
+                            <ArticleIcon />
+                            <Typography sx={{ fontFamily: 'Georgia', fontWeight: 400 }} variant="h2">Upload Article</Typography>
+                        </Box>
                     </Box>
                     <Box 
-                        className={`tab ${activeTab === 'uploadEPaper' ? 'active' : ''}`} 
-                        onClick={() => setActiveTab('uploadEPaper')}
+                        className={`tab ${activeTab === 'deleteArticle' ? 'active' : ''}`} 
+                        onClick={() => setActiveTab('deleteArticle')}
                     >
-                        <Typography variant="h2">Upload E-Paper</Typography>
+                        <Box className='tabContent'>
+                            <DeleteIcon />
+                            <Typography sx={{ fontFamily: 'Georgia', fontWeight: 400 }} variant="h2">Delete Article</Typography>
+                        </Box>
                     </Box>
                 </Box>
                 <Box className="content">

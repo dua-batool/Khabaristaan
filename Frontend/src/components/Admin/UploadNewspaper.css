@@ -1,0 +1,8 @@
+.upload-body {
+    padding: 40px;
+}
+
+.upload-newspaper {
+    gap: 20px;
+    display: flex;
+}

@@ -10,7 +10,7 @@ const Header = () => {
       <Box className="header" style={{ width: '100vw', height: '180px' }}>
         <Box className="header-content">
           <Box className="left-items">
-            <Button className="login-button">Login</Button>
+            <Button sx={{fontFamily: 'Georgia', textTransform: 'none', fontSize: '16px'}} className="login-button">Login</Button>
             <Link to="/search" style={{ textDecoration: 'none', color: 'inherit' }}>
               <Box className="search-icon">
                   <SearchIcon />
