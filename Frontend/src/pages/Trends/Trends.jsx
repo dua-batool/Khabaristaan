@@ -34,7 +34,7 @@ const Trends = () => {
         <Box className="container">
           {/* Top Section with Search and Filters */}
 
-          <Box className="search-section">
+          {/* <Box className="search-section">
             <Box className="search-item">
                 <TextField
                     variant="outlined"
@@ -195,7 +195,7 @@ const Trends = () => {
 
 
           </Box>
-    
+     */}
           {/* Trend Graph Section */}
           {/* <Box className="trend-graph-section">
             <Box > 
@@ -209,7 +209,7 @@ const Trends = () => {
         </Box>
     
           {/* Results Section */}
-          <Box className="category-title">
+          {/* <Box className="category-title">
             <Typography variant="h1" >مشہور مختلف مضامین</Typography>
           </Box>
 
@@ -243,7 +243,7 @@ const Trends = () => {
                         <Typography variant="body1" className="category">پاکستان</Typography>
                     </Box>
                 </Box>
-            </Box>
+            </Box> */}
 
         </Box>
         </Box>

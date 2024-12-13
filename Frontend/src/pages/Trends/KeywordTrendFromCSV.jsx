@@ -136,11 +136,15 @@ const KeywordTrendFromCSV = () => {
     <div>
       {/* Input Field for Keyword */}
       <Box className="input-container">
+      <label className="custom-label" htmlFor="keyword1">
+            لفظ درج کریں
+        </label>
       <input
         type="text"
         value={keyword}
         onChange={(e) => setKeyword(e.target.value)}
         placeholder="Enter keyword"
+        className="custom-input"
       />
       </Box>
 
@@ -172,6 +176,9 @@ const KeywordTrendFromCSV = () => {
           xaxis: { title: 'Year' },
           yaxis: { title: 'Occurrences' },
           template: 'plotly_white',
+          font: {
+            family: 'Noto Nastaliq Urdu, serif', 
+          },
         }}
       />
       </Box>
@@ -254,31 +261,45 @@ const KeywordTrendFromCSV = () => {
             yaxis: { title: 'Frequency' },
             template: 'plotly_white',
             margin: { l: 40, r: 40, t: 60, b: 100 },
+            font: {
+              family: 'Noto Nastaliq Urdu, serif', 
+            },
           }}
         />
       </Box>
 
-      {/* Keyword Analysis Section */}
+      {/* Keyword Trend Comparision */}
+      <h2>Keyword Trend Comparision "{keyword}"</h2>
       <div className="keyword-analysis-section">
-        {/* Input Field for Keyword 1 */}
-        <div className="input-container">
-          <input
-            type="text"
-            value={keyword1}
-            onChange={(e) => setKeyword1(e.target.value)}
-            placeholder="Enter first keyword"
-          />
-        </div>
+        <Box fullWidth sx={{display: 'flex', flexDirection: 'row-reverse', justifyContent: 'space-between', gap: '32px'}}>
+          {/* Input Field for Keyword 1 */}
+          <Box sx={{flexGrow: 1}} className="input-container">
+          <label className="custom-label" htmlFor="keyword1">
+            پہلا لفظ درج کریں
+          </label>
+            <input
+              type="text"
+              value={keyword1}
+              onChange={(e) => setKeyword1(e.target.value)}
+              placeholder="Enter first keyword"
+              className="custom-input"
+            />
+          </Box>
 
-        {/* Input Field for Keyword 2 */}
-        <div className="input-container">
-          <input
-            type="text"
-            value={keyword2}
-            onChange={(e) => setKeyword2(e.target.value)}
-            placeholder="Enter second keyword"
-          />
-        </div>
+          {/* Input Field for Keyword 2 */}
+          <Box sx={{flexGrow: 1}} className="input-container">
+          <label className="custom-label" htmlFor="keyword1">
+          دوسرا لفظ درج کریں
+          </label>
+            <input
+              type="text"
+              value={keyword2}
+              onChange={(e) => setKeyword2(e.target.value)}
+              placeholder="Enter second keyword"
+              className="custom-input"
+            />
+          </Box>
+        </Box>
 
         {/* Trend Graph for Keyword Comparison */}
         <div className="graph-container">
@@ -314,6 +335,9 @@ const KeywordTrendFromCSV = () => {
               xaxis: { title: 'Year' },
               yaxis: { title: 'Occurrences' },
               template: 'plotly_white',
+              font: {
+                family: 'Noto Nastaliq Urdu, serif', 
+              },
             }}
           />
         </div>
