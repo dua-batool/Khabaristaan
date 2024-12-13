@@ -1,10 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Box, Button, Typography } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import './Header.css';
 
 const Header = () => {
+  const location = useLocation(); // Get the current path
 
   return (
       <Box className="header" style={{ width: '100vw', height: '180px' }}>
@@ -18,16 +19,25 @@ const Header = () => {
             </Link>
           </Box>
           <Box className="nav-links">
-            <Typography variant='h2'>اخبارات</Typography>
+          <Box 
+              className={`page ${location.pathname === '/collections' ? 'active' : ''}`}>
+              <Typography variant='h2'>مجموعے</Typography>
+            </Box>
+            <Box 
+              className={`page ${location.pathname === '/newspapers' ? 'active' : ''}`}>
+              <Typography variant='h2'>اخبارات</Typography>
+            </Box>
             <Link to="/trends" style={{ textDecoration: 'none', color: 'inherit' }}>
-              <Typography variant="h2">رجحانات</Typography>
+              <Box 
+                className={`page ${location.pathname === '/trends' ? 'active' : ''}`}>
+                <Typography variant="h2">رجحانات</Typography>
+              </Box>
             </Link>
-            <Typography variant='h2'>کلاسیفائیڈ</Typography>
-            <Typography variant='h2'>ایڈیٹوریل</Typography>
-            <Typography variant='h2'>انٹرنیشنل</Typography>
-            <Typography variant='h2'>پاکستاں</Typography>
             <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-              <Typography variant='h2'>تازہ تریں</Typography>
+              <Box 
+                className={`page ${location.pathname === '/' ? 'active' : ''}`}>
+                <Typography variant='h2'>خبریں</Typography>
+              </Box>
             </Link>
           </Box>
           <Box className="banner">
