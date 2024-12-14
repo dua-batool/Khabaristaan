@@ -212,7 +212,7 @@ const KeywordTrendFromCSV = () => {
       ))}
 
       {/* Top 10 Articles with Accordion */}
-      <h2>Top 10 Articles for Keyword "{keyword}"</h2>
+      {/* <h2>Top 10 Articles for Keyword "{keyword}"</h2>
       {topArticles.map(({ articleName, occurrences, content }, index) => {
         const excerpt = content ? content.slice(0, 200) : ""; // Safely slice content if available
         const expanded = expandedArticles[index] || false; // Use the expanded state from the object
@@ -224,7 +224,7 @@ const KeywordTrendFromCSV = () => {
             </AccordionSummary>
             <AccordionDetails>
               <Typography variant="body1" style={{ whiteSpace: 'pre-wrap', maxHeight: expanded ? 'none' : '150px', overflowY: 'auto' }}>
-                {/* Display the excerpt or the full content depending on expansion */}
+              
                 {content ? (expanded ? content : `${excerpt}...`) : "No content available"}
               </Typography>
               {!expanded && (
@@ -240,7 +240,7 @@ const KeywordTrendFromCSV = () => {
             </AccordionDetails>
           </Accordion>
         );
-      })}
+      })} */}
 
       {/* Keyword Frequency Across Articles Bar Chart */}
       <Box sx={{marginTop: '32px'}} className="keyword-frequency-graph">

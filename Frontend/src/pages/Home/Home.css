@@ -78,6 +78,8 @@ html, body {
     align-items: flex-end;
     gap: 32px;
     margin-right: 20px;
+    border-right: 1px solid #e0ddd0;
+    padding-right: 32px;
   }
 
   .sidebar-item {

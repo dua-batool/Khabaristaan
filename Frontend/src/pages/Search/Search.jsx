@@ -145,7 +145,7 @@ const Search = () => {
                 </Box>
                 <Box className="sub-article">
                     <Box className="sidebar-text">
-                        <Typography variant="h2">گڈلگ جسٹس یحییٰ آفریدی</Typography>
+                        <Typography sx={{textAlign: 'right',}} variant="h2">گڈلگ جسٹس یحییٰ آفریدی</Typography>
                         <Typography variant="body1" className="author"> پولیس کے مطابق ڈیفنس فیز 5 توحید کمرشل میں فلیٹ سے 3 سے 4 روز پرانی لاش ملی ہے۔</Typography>
                     </Box>
                     <Box>
@@ -164,7 +164,7 @@ const Search = () => {
                 </Box>
                 <Box className="sub-article">
                     <Box className="sidebar-text">
-                        <Typography variant="h2">سیاست ہو تو ایسی</Typography>
+                        <Typography sx={{textAlign: 'right',}} variant="h2">سیاست ہو تو ایسی</Typography>
                         <Typography variant="body1" className="author">پولیس نے بتایا کہ مقتول کے جسم پر گولی کا نشان ہے اور مقتول کی شناخت غنی الرحمان کے نام سے ہوئی ہے۔</Typography>
                     </Box>
                     <Box>
