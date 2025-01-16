@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Box, Button, Typography } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import './Header.css';
+import Login from '../Modals/Login'
 
 const Header = () => {
   const location = useLocation(); // Get the current path
@@ -11,7 +12,8 @@ const Header = () => {
       <Box className="header" style={{ width: '100vw', height: '180px' }}>
         <Box className="header-content">
           <Box className="left-items">
-            <Button sx={{fontFamily: 'Georgia', textTransform: 'none', fontSize: '16px'}} className="login-button">Login</Button>
+            {/* <Button sx={{fontFamily: 'Georgia', textTransform: 'none', fontSize: '16px'}} className="login-button">Login</Button> */}
+            <Login />
             <Link to="/search" style={{ textDecoration: 'none', color: 'inherit' }}>
               <Box className="search-icon">
                   <SearchIcon />
