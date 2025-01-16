@@ -7,6 +7,9 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import './Home.css';
 import Header from '../../components/Header/Header';
+import bushra1 from '../../assets/bushra1.jpeg';
+import bushra2 from '../../assets/bushra2.jpeg';
+import bushra3 from '../../assets/bushra3.jpeg';
 
 const HomePage = () => {
   const [dateValue, setDateValue] = React.useState(null);
@@ -69,7 +72,7 @@ const HomePage = () => {
                 </Box>
               <Box className="sidebar-text">
                 <Typography variant="h2">گڈلگ جسٹس یحییٰ آفریدی</Typography>
-                <Typography variant="body1" className="author">حامد میر</Typography>
+                {/* <Typography variant="body1" className="author">حامد میر</Typography> */}
               </Box>
             </Box>
 
@@ -81,7 +84,7 @@ const HomePage = () => {
                 </Box>
               <Box className="sidebar-text">
                 <Typography variant="h2">سیاست ہو تو ایسی</Typography>
-                <Typography variant="body1" className="author">سلیم صافی</Typography>
+                {/* <Typography variant="body1" className="author">سلیم صافی</Typography> */}
               </Box>
             </Box>
 
@@ -93,7 +96,7 @@ const HomePage = () => {
                 </Box>
               <Box className="sidebar-text">
                 <Typography variant="h2">دانستہ اور نادانستہ غلطیاں</Typography>
-                <Typography variant="body1" className="author">ایس اے زاہد</Typography>
+                {/* <Typography variant="body1" className="author">ایس اے زاہد</Typography> */}
               </Box>
             </Box>
 
@@ -105,7 +108,7 @@ const HomePage = () => {
                 </Box>
               <Box className="sidebar-text">
                 <Typography variant="h2">گڈلگ جسٹس یحییٰ آفریدی</Typography>
-                <Typography variant="body1" className="author">حامد میر</Typography>
+                {/* <Typography variant="body1" className="author">حامد میر</Typography> */}
               </Box>
             </Box>
 
@@ -117,7 +120,7 @@ const HomePage = () => {
                 </Box>
               <Box className="sidebar-text">
                 <Typography variant="h2">گڈلگ جسٹس یحییٰ آفریدی</Typography>
-                <Typography variant="body1" className="author">حامد میر</Typography>
+                {/* <Typography variant="body1" className="author">حامد میر</Typography> */}
               </Box>
             </Box>
 
@@ -128,7 +131,7 @@ const HomePage = () => {
           <Box gap={2} sx={{display:'flex', flexDirection:'row'}}>
           <Box flex="2"
             component="img"
-            src={"https://via.placeholder.com/400"}
+            src={bushra1}
             alt="Content preview"
             sx={{
               width: 400,
@@ -154,11 +157,11 @@ const HomePage = () => {
                 <Typography className="category">انٹرنیشنل</Typography>
                 <Box 
                   component="img"
-                  src={"https://via.placeholder.com/300"}
+                  src={bushra2}
                   alt="Content preview"
                   sx={{
-                    width: 300,
-                    height: 140,
+                    width: 400,
+                    height: 200,
                     objectFit: "cover",
                   }}
                 />
@@ -173,11 +176,11 @@ const HomePage = () => {
                 <Typography className="category">انٹرنیشنل</Typography>
                 <Box 
                   component="img"
-                  src={"https://via.placeholder.com/300"}
+                  src={bushra3}
                   alt="Content preview"
                   sx={{
-                    width: 300,
-                    height: 140,
+                    width: 400,
+                    height: 200,
                     objectFit: "cover",
                   }}
                 />
