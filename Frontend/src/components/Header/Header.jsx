@@ -25,10 +25,12 @@ const Header = () => {
               className={`page ${location.pathname === '/collections' ? 'active' : ''}`}>
               <Typography variant='h2'>مجموعے</Typography>
             </Box>
-            <Box 
-              className={`page ${location.pathname === '/newspapers' ? 'active' : ''}`}>
-              <Typography variant='h2'>اخبارات</Typography>
-            </Box>
+            <Link to="/newspapers" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <Box 
+                className={`page ${location.pathname === '/newspapers' ? 'active' : ''}`}>
+                <Typography variant='h2'>اخبارات</Typography>
+              </Box>
+            </Link>
             <Link to="/trends" style={{ textDecoration: 'none', color: 'inherit' }}>
               <Box 
                 className={`page ${location.pathname === '/trends' ? 'active' : ''}`}>

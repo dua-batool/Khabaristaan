@@ -1,5 +1,5 @@
 // SignUp.jsx
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Box,
   Typography,
@@ -9,13 +9,20 @@ import {
   IconButton,
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
-import { useState } from 'react';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
 const SignUp = ({ open, onClose, onSwitchToLogin }) => {
+  const [showPassword, setShowPassword] = useState(false); // State for showing/hiding password
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false); // State for confirming password visibility
+
   const handleRegister = () => {
     // Add registration logic here
     console.log('Register button clicked');
   };
+
+  const togglePasswordVisibility = () => setShowPassword((prev) => !prev);
+  const toggleConfirmPasswordVisibility = () => setShowConfirmPassword((prev) => !prev);
 
   return (
     <Modal open={open} onClose={onClose}>
@@ -51,26 +58,52 @@ const SignUp = ({ open, onClose, onSwitchToLogin }) => {
               style: { fontFamily: 'Noto Nastaliq Urdu' },
             }}
           />
-          <TextField
-            fullWidth
-            margin="normal"
-            label="Enter Password"
-            type="password"
-            variant="outlined"
-            InputLabelProps={{
-              style: { fontFamily: 'Noto Nastaliq Urdu' },
-            }}
-          />
-          <TextField
-            fullWidth
-            margin="normal"
-            label="Confirm Password"
-            type="password"
-            variant="outlined"
-            InputLabelProps={{
-              style: { fontFamily: 'Noto Nastaliq Urdu' },
-            }}
-          />
+          <Box sx={{ position: 'relative' }}>
+            <TextField
+              fullWidth
+              margin="normal"
+              label="Enter Password"
+              type={showPassword ? 'text' : 'password'} // Toggle password visibility
+              variant="outlined"
+              InputLabelProps={{
+                style: { fontFamily: 'Noto Nastaliq Urdu' },
+              }}
+            />
+            <IconButton
+              onClick={togglePasswordVisibility}
+              sx={{
+                position: 'absolute',
+                right: 10,
+                top: '50%',
+                transform: 'translateY(-50%)',
+              }}
+            >
+              {showPassword ? <VisibilityOff /> : <Visibility />}
+            </IconButton>
+          </Box>
+          <Box sx={{ position: 'relative' }}>
+            <TextField
+              fullWidth
+              margin="normal"
+              label="Confirm Password"
+              type={showConfirmPassword ? 'text' : 'password'} // Toggle confirm password visibility
+              variant="outlined"
+              InputLabelProps={{
+                style: { fontFamily: 'Noto Nastaliq Urdu' },
+              }}
+            />
+            <IconButton
+              onClick={toggleConfirmPasswordVisibility}
+              sx={{
+                position: 'absolute',
+                right: 10,
+                top: '50%',
+                transform: 'translateY(-50%)',
+              }}
+            >
+              {showConfirmPassword ? <VisibilityOff /> : <Visibility />}
+            </IconButton>
+          </Box>
         </Box>
 
         <Button
