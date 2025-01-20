@@ -1,0 +1,25 @@
+.upload-body {
+    padding: 40px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.custom-textfield .MuiOutlinedInput-root {
+    font-family: 'Georgia'; /* Font family */
+    line-height: 2; /* Line height for input text */
+}
+
+.custom-textfield .MuiOutlinedInput-root:hover fieldset {
+    border-color: var(--dark-brown); /* Border color on hover */
+}
+
+.custom-textfield .MuiOutlinedInput-root.Mui-focused fieldset {
+    border-color: var(--dark-brown); /* Border color when focused */
+}
+
+.custom-textfield .MuiInputLabel-root {
+    line-height: 1.5; /* Line height for label */
+}
+
+.custom-textfield .MuiInputLabel-root.Mui-focused {
+    color: var(--dark-brown); /* Label color when focused */
+}
