@@ -1,32 +1,41 @@
 import React, { useState, useRef } from 'react';
-import { Box, Button, Typography, Snackbar, Alert } from '@mui/material';
+import { Box, Button, Typography, Snackbar, Alert, CircularProgress } from '@mui/material';
 import './UploadNewspaper.css';
 
 const UploadNewspapers = () => {
-    const [pdfFile, setPdfFile] = useState(null);  // State to store the uploaded PDF file
-    const [openSnackbar, setOpenSnackbar] = useState(false); // State to control Snackbar visibility
-    const fileInputRef = useRef(null); // Ref to file input element
+    const [pdfFile, setPdfFile] = useState(null);
+    const [openSnackbar, setOpenSnackbar] = useState({ open: false, message: '', severity: '' });
+    const [loading, setLoading] = useState(false);
+    const fileInputRef = useRef(null);
 
     // Handle file selection
     const handleFileChange = (e) => {
         const file = e.target.files[0];
         if (file && file.type === 'application/pdf') {
-            setPdfFile(URL.createObjectURL(file)); // Store the file URL to display it
+            setPdfFile(URL.createObjectURL(file));
         } else {
-            alert("Please upload a valid PDF file.");
+            setOpenSnackbar({ open: true, message: 'Please upload a valid PDF file.', severity: 'error' });
+            fileInputRef.current.value = null;
         }
     };
 
     // Handle the upload button click
     const handleUploadClick = () => {
-        setOpenSnackbar(true); // Open Snackbar when the upload button is clicked
-        setPdfFile(null); // Reset the uploaded PDF file so the user can upload another
-        fileInputRef.current.value = null; // Reset the file input field
+        setLoading(true);
+
+        // Simulate API call
+        setTimeout(() => {
+            setOpenSnackbar({ open: true, message: 'PDF uploaded successfully!', severity: 'success' });
+            localStorage.setItem('uploadedPdf', pdfFile); // Store PDF in local storage
+            setPdfFile(null);
+            fileInputRef.current.value = null;
+            setLoading(false);
+        }, 2000);
     };
 
     // Close the Snackbar
     const handleCloseSnackbar = () => {
-        setOpenSnackbar(false);
+        setOpenSnackbar({ open: false, message: '', severity: '' });
     };
 
     return (
@@ -35,15 +44,18 @@ const UploadNewspapers = () => {
                 <Typography variant="h2" gutterBottom>
                     Upload Newspaper PDF
                 </Typography>
-                
-                <Button sx={{ backgroundColor: 'var(--dark-brown)', fontFamily: 'Georgia', textTransform: 'none'}} variant="contained" component="label">
+
+                <Button sx={{ backgroundColor: 'var(--dark-brown)', fontFamily: 'Georgia', textTransform: 'none' }}
+                    variant="contained"
+                    component="label"
+                >
                     Choose PDF
-                    <input 
-                        ref={fileInputRef} // Attach the ref to the file input
-                        type="file" 
-                        accept="application/pdf" 
-                        onChange={handleFileChange} 
-                        hidden 
+                    <input
+                        ref={fileInputRef}
+                        type="file"
+                        accept="application/pdf"
+                        onChange={handleFileChange}
+                        hidden
                     />
                 </Button>
             </Box>
@@ -51,10 +63,10 @@ const UploadNewspapers = () => {
             {pdfFile ? (
                 <Box sx={{ marginTop: 2 }}>
                     <Typography variant="body1" sx={{ marginBottom: 2 }}>Uploaded PDF:</Typography>
-                    <embed 
-                        src={pdfFile} 
-                        type="application/pdf" 
-                        width="100%" 
+                    <embed
+                        src={pdfFile}
+                        type="application/pdf"
+                        width="100%"
                         height="400px"
                     />
                 </Box>
@@ -64,24 +76,22 @@ const UploadNewspapers = () => {
                 </Typography>
             )}
 
-            {/* Disabled button until the PDF is uploaded */}
-            <Button 
-                sx={{ backgroundColor: 'var(--dark-brown)', fontFamily: 'Georgia', marginTop: 2, textTransform: 'none' }} 
-                variant="contained" 
-                disabled={!pdfFile}  // Disable button if no PDF is uploaded
-                onClick={handleUploadClick} // Show snackbar on upload button click
+            <Button
+                sx={{ backgroundColor: 'var(--dark-brown)', fontFamily: 'Georgia', marginTop: 2, textTransform: 'none' }}
+                variant="contained"
+                disabled={!pdfFile || loading}
+                onClick={handleUploadClick}
             >
-                Upload
+                {loading ? <CircularProgress size={24} sx={{ color: 'white' }} /> : 'Upload'}
             </Button>
 
-            {/* Snackbar for success message */}
-            <Snackbar 
-                open={openSnackbar} 
-                autoHideDuration={3000} // Automatically hide after 3 seconds
+            <Snackbar
+                open={openSnackbar.open}
+                autoHideDuration={3000}
                 onClose={handleCloseSnackbar}
             >
-                <Alert onClose={handleCloseSnackbar} severity="success" sx={{ width: '100%' }}>
-                    PDF uploaded successfully!
+                <Alert onClose={handleCloseSnackbar} severity={openSnackbar.severity} sx={{ width: '100%' }}>
+                    {openSnackbar.message}
                 </Alert>
             </Snackbar>
         </Box>

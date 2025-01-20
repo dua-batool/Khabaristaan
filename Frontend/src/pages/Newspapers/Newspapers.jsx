@@ -1,22 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Typography, Grid } from '@mui/material';
 import { pdfjs } from 'react-pdf';
+import axios from 'axios';
 import Header from '../../components/Header/Header';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@2.15.349/build/pdf.worker.min.js`;
 
-const pdfFiles = [
-    'one.pdf',
-    'two.pdf',
-    'three.pdf',
-    'four.pdf',
-    'five.pdf',
-    'six.pdf',
-    // Add more PDF file paths here
-];
-
 const Newspapers = () => {
+    const [pdfFiles, setPdfFiles] = useState([]);
     const [thumbnails, setThumbnails] = useState({});
+
+    useEffect(() => {
+        const fetchNewspapers = async () => {
+            try {
+                const response = await axios.get('http://your-backend-api.com/newspapers');
+                setPdfFiles(response.data);
+            } catch (error) {
+                console.error('Error fetching newspapers:', error);
+            }
+        };
+
+        fetchNewspapers();
+    }, []);
 
     useEffect(() => {
         const generateThumbnails = async () => {
@@ -24,7 +29,7 @@ const Newspapers = () => {
 
             for (const pdf of pdfFiles) {
                 try {
-                    const pdfDoc = await pdfjs.getDocument(pdf).promise;
+                    const pdfDoc = await pdfjs.getDocument(pdf.url).promise;
                     const page = await pdfDoc.getPage(1); // Get the first page
                     const viewport = page.getViewport({ scale: 0.5 }); // Adjust the scale for thumbnail size
                     const canvas = document.createElement('canvas');
@@ -37,18 +42,20 @@ const Newspapers = () => {
                         viewport: viewport,
                     }).promise;
 
-                    thumbnailsObj[pdf] = canvas.toDataURL();
+                    thumbnailsObj[pdf.url] = canvas.toDataURL();
                 } catch (error) {
-                    console.error(`Error generating thumbnail for ${pdf}:`, error);
-                    thumbnailsObj[pdf] = null;
+                    console.error(`Error generating thumbnail for ${pdf.url}:`, error);
+                    thumbnailsObj[pdf.url] = null;
                 }
             }
 
             setThumbnails(thumbnailsObj);
         };
 
-        generateThumbnails();
-    }, []);
+        if (pdfFiles.length > 0) {
+            generateThumbnails();
+        }
+    }, [pdfFiles]);
 
     const openPdf = (pdfPath) => {
         window.open(pdfPath, '_blank');
@@ -74,7 +81,7 @@ const Newspapers = () => {
                         sm={6}
                         md={3}
                         key={index}
-                        onClick={() => openPdf(pdf)}
+                        onClick={() => openPdf(pdf.url)}
                         style={{ cursor: 'pointer' }}
                     >
                         <Box
@@ -86,9 +93,9 @@ const Newspapers = () => {
                                 padding: '10px',
                             }}
                         >
-                            {thumbnails[pdf] ? (
+                            {thumbnails[pdf.url] ? (
                                 <img
-                                    src={thumbnails[pdf]}
+                                    src={thumbnails[pdf.url]}
                                     alt={`PDF ${index + 1}`}
                                     style={{
                                         width: '100%',
@@ -102,7 +109,7 @@ const Newspapers = () => {
                                 </Typography>
                             )}
                             <Typography variant="body1" style={{ marginTop: '10px' }}>
-                                PDF {index + 1}
+                                {pdf.title}
                             </Typography>
                         </Box>
                     </Grid>
