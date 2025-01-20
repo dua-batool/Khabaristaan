@@ -45,7 +45,7 @@ const Login = () => {
       {/* Login Button */}
       <Button
         onClick={handleLoginOpen}
-        sx={{ fontFamily: 'Noto Nastaliq Urdu, sans-serif', textTransform: 'none', fontSize: '16px' }}
+        sx={{ fontFamily: 'Georgia, sans-serif', textTransform: 'none', fontSize: '16px' }}
         className="login-button"
       >
         Login
@@ -84,8 +84,8 @@ const Login = () => {
               variant="outlined"
               fullWidth
               required
-              InputLabelProps={{ style: { fontFamily: 'Noto Nastaliq Urdu, sans-serif' } }}
-              sx={{ fontFamily: 'Noto Nastaliq Urdu, sans-serif' }}
+              InputLabelProps={{ style: { fontFamily: 'Georgia, sans-serif' } }}
+              sx={{ fontFamily: 'Georgia, sans-serif' }}
             />
             {/* Password Input with visibility toggle */}
             <TextField
@@ -94,8 +94,8 @@ const Login = () => {
               variant="outlined"
               fullWidth
               required
-              InputLabelProps={{ style: { fontFamily: 'Noto Nastaliq Urdu, sans-serif' } }}
-              sx={{ fontFamily: 'Noto Nastaliq Urdu, sans-serif' }}
+              InputLabelProps={{ style: { fontFamily: 'Georgia, sans-serif' } }}
+              sx={{ fontFamily: 'Georgia, sans-serif' }}
               InputProps={{
                 endAdornment: (
                   <InputAdornment position="end">
@@ -109,7 +109,7 @@ const Login = () => {
             {/* Forgot Password */}
             <Button
               variant="text"
-              sx={{ display: 'flex', justifyContent: 'flex-start', color: 'var(--light-brown)', fontFamily: 'Noto Nastaliq Urdu, sans-serif', textTransform: 'none', fontSize: 14 }}
+              sx={{ display: 'flex', justifyContent: 'flex-start', color: 'var(--dark-brown)', fontFamily: 'Georgia, sans-serif', textTransform: 'none', fontSize: 14 }}
             >
               Forgot Password?
             </Button>
@@ -119,7 +119,7 @@ const Login = () => {
               sx={{
                 bgcolor: 'var(--dark-brown)',
                 color: 'var(--light-beige)',
-                fontFamily: 'Noto Nastaliq Urdu, sans-serif',
+                fontFamily: 'Georgia, sans-serif',
                 textTransform: 'none',
                 fontSize: 16,
               }}
@@ -131,20 +131,22 @@ const Login = () => {
           </Box>
 
           {/* Sign Up Button */}
+          <Box sx={{ display: "flex", justifyContent: "center" }}>
           <Typography
             variant="body1"
             textAlign="center"
-            sx={{ mt: 2, color: 'var(--dark-brown)', fontFamily: 'Noto Nastaliq Urdu, sans-serif' }}
+            sx={{ mt: 2, color: 'var(--dark-brown)', fontFamily: 'Georgia, sans-serif' }}
           >
             Don’t have an account?
             <Button
               variant="text"
               onClick={handleSignUpOpen}
-              sx={{ color: 'var(--light-brown)', fontFamily: 'Noto Nastaliq Urdu, sans-serif', textTransform: 'none', fontSize: 14 }}
+              sx={{ color: 'var(--dark-brown)', fontFamily: 'Georgia, sans-serif', textTransform: 'none', fontSize: 14, fontWeight: "bold" }}
             >
               Sign up here
             </Button>
           </Typography>
+          </Box>
         </Box>
       </Modal>
 

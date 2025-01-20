@@ -55,7 +55,7 @@ const SignUp = ({ open, onClose, onSwitchToLogin }) => {
             label="Email"
             variant="outlined"
             InputLabelProps={{
-              style: { fontFamily: 'Noto Nastaliq Urdu' },
+              style: { fontFamily: 'Georgia' },
             }}
           />
           <Box sx={{ position: 'relative' }}>
@@ -66,7 +66,7 @@ const SignUp = ({ open, onClose, onSwitchToLogin }) => {
               type={showPassword ? 'text' : 'password'} // Toggle password visibility
               variant="outlined"
               InputLabelProps={{
-                style: { fontFamily: 'Noto Nastaliq Urdu' },
+                style: { fontFamily: 'Georgia' },
               }}
             />
             <IconButton
@@ -89,7 +89,7 @@ const SignUp = ({ open, onClose, onSwitchToLogin }) => {
               type={showConfirmPassword ? 'text' : 'password'} // Toggle confirm password visibility
               variant="outlined"
               InputLabelProps={{
-                style: { fontFamily: 'Noto Nastaliq Urdu' },
+                style: { fontFamily: 'Georgia' },
               }}
             />
             <IconButton
@@ -110,8 +110,9 @@ const SignUp = ({ open, onClose, onSwitchToLogin }) => {
           fullWidth
           variant="contained"
           sx={{
-            bgcolor: 'var(--light-brown)',
+            bgcolor: 'var(--dark-brown)',
             color: 'white',
+            fontWeight: 'bold',
             mt: 3,
             '&:hover': { bgcolor: 'var(--dark-brown)' },
           }}
@@ -120,10 +121,10 @@ const SignUp = ({ open, onClose, onSwitchToLogin }) => {
           Register
         </Button>
 
-        <Box mt={2} textAlign="center">
+        <Box mt={2} textAlign="center" sx={{ display: "flex", flexDirection: "row", justifyContent: "center" }}>
           <Typography
             variant="body1"
-            sx={{ fontFamily: 'Noto Nastaliq Urdu' }}
+            sx={{ fontFamily: 'Georgia' }}
           >
             Already have an account?{' '}
             <Button

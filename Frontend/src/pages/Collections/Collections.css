@@ -1,0 +1,8 @@
+.collection {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid var(--dark-brown);
+    border-radius: 8px;
+}
