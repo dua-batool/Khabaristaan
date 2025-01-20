@@ -1,6 +1,11 @@
-.upload-body {
+.body-content {
     padding: 40px;
     font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.upload-newspaper {
+    gap: 20px;
+    display: flex;
 }
 
 .custom-textfield .MuiOutlinedInput-root {
@@ -17,7 +22,8 @@
 }
 
 .custom-textfield .MuiInputLabel-root {
-    line-height: 1.5; /* Line height for label */
+    line-height: 1.2; /* Line height for label */
+    text-align: start;
 }
 
 .custom-textfield .MuiInputLabel-root.Mui-focused {

@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { Box, Button, Typography, Snackbar, Alert, CircularProgress } from '@mui/material';
-import './UploadNewspaper.css';
+// import './UploadNewspaper.css';
+import './style.css';
 
 const UploadNewspapers = () => {
     const [pdfFile, setPdfFile] = useState(null);
@@ -39,7 +40,7 @@ const UploadNewspapers = () => {
     };
 
     return (
-        <Box className="upload-body">
+        <Box className="body-content">
             <Box className="upload-newspaper">
                 <Typography variant="h2" gutterBottom>
                     Upload Newspaper PDF

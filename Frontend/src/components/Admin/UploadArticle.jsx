@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Box, Typography, TextField, Button, Snackbar, Alert, IconButton } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
-import './UploadArticle.css';
+// import './UploadArticle.css';
+import './style.css';
 import axios from 'axios'; 
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';  
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';  
@@ -68,7 +69,7 @@ const UploadArticle = () => {
     };
 
     return (
-        <Box className="upload-body">
+        <Box className="body-content">
             <Typography variant="h2" gutterBottom sx={{ fontFamily: 'Georgia', mb: 2 }}>
                 Upload Article
             </Typography>

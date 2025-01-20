@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Box, Typography, Checkbox, Button, IconButton, Dialog, DialogTitle, DialogContent, DialogActions } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import axios from 'axios';
-import './DeleteNewspaper.css';
+// import './DeleteNewspaper.css';
+import './style.css';
 
 const DeleteNewspapers = () => {
     const [pdfList, setPdfList] = useState([]);
@@ -59,7 +60,7 @@ const DeleteNewspapers = () => {
     };
 
     return (
-        <Box className="delete-body">
+        <Box className="body-content">
             <Typography variant="h2" gutterBottom sx={{ fontFamily: "Georgia", mb: 2 }}>
                 Delete Newspaper PDF
             </Typography>

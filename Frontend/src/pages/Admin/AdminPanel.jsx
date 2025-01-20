@@ -5,6 +5,7 @@ import './AdminPanel.css';
 import UploadNewspapers from '../../components/Admin/UploadNewspaper';
 import DeleteNewspapers from '../../components/Admin/DeleteNewspaper';
 import UploadArticle from '../../components/Admin/UploadArticle';
+import DeleteArticle from '../../components/Admin/DeleteArticle';
 import NewspaperIcon from '@mui/icons-material/Newspaper';
 import DescriptionIcon from '@mui/icons-material/Description'; // For e-paper
 import ArticleIcon from '@mui/icons-material/Article';
@@ -23,7 +24,7 @@ const AdminPanel = () => {
             case 'uploadArticle':
                 return <Typography><UploadArticle /></Typography>;
             case 'deleteArticle':
-                return <Typography>Upload E-Paper Content</Typography>;
+                return <Typography><DeleteArticle /></Typography>;
             default:
                 return <Typography>Choose an option from the tabs</Typography>;
         }
