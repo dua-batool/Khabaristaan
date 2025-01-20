@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Typography, Checkbox, Button, IconButton } from '@mui/material';
+import { Box, Typography, Checkbox, Button, IconButton, Dialog, DialogTitle, DialogContent, DialogActions } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import axios from 'axios';
 import './DeleteNewspaper.css';
@@ -8,6 +8,7 @@ const DeleteNewspapers = () => {
     const [pdfList, setPdfList] = useState([]);
     const [selectedFiles, setSelectedFiles] = useState([]);
     const [selectAll, setSelectAll] = useState(false);
+    const [openDialog, setOpenDialog] = useState(false);
 
     // Fetch uploaded PDFs from backend
     useEffect(() => {
@@ -35,6 +36,16 @@ const DeleteNewspapers = () => {
         setSelectAll(!selectAll);
     };
 
+    // Open delete confirmation dialog
+    const handleOpenDialog = () => {
+        setOpenDialog(true);
+    };
+
+    // Close delete confirmation dialog
+    const handleCloseDialog = () => {
+        setOpenDialog(false);
+    };
+
     // Handle delete action
     const handleDeleteSelected = () => {
         axios.post('http://localhost:5000/delete', { ids: selectedFiles })
@@ -44,6 +55,7 @@ const DeleteNewspapers = () => {
                 setSelectAll(false);
             })
             .catch(error => console.error('Error deleting PDFs:', error));
+        setOpenDialog(false);
     };
 
     return (
@@ -59,7 +71,7 @@ const DeleteNewspapers = () => {
             <Box>
                 <Checkbox checked={selectAll} onChange={handleSelectAll} />
                 <Typography component="span" sx={{ fontFamily: "Georgia" }}>Select All</Typography>
-                <IconButton onClick={handleDeleteSelected} color="error" sx={{ ml: 2 }}>
+                <IconButton onClick={handleOpenDialog} color="error" sx={{ ml: 2 }}>
                     <DeleteIcon />
                 </IconButton>
             </Box>
@@ -79,6 +91,18 @@ const DeleteNewspapers = () => {
                     <Typography sx={{ fontFamily: "Georgia" }}>No PDFs uploaded.</Typography>
                 )}
             </Box>
+
+            {/* Confirmation Dialog */}
+            <Dialog open={openDialog} onClose={handleCloseDialog}>
+                <DialogTitle>Confirm Deletion</DialogTitle>
+                <DialogContent>
+                    <Typography>Deleting the selected newspapers is an irreversible action. Are you sure?</Typography>
+                </DialogContent>
+                <DialogActions>
+                    <Button onClick={handleCloseDialog} color="primary">Cancel</Button>
+                    <Button onClick={handleDeleteSelected} color="error">Yes, Delete</Button>
+                </DialogActions>
+            </Dialog>
         </Box>
     );
 };
